@@ -1,9 +1,11 @@
 # 🧭🥄 Algoritmo &epsilon;-Guloso (&epsilon;-Greedy Algorithm)
 
+Veja a aplicação do algoritmo no [notebook!](eps_greedy.ipynb)
+
 ## Ideia do Algoritmo
 A ideia deste algoritmo é ser uma evolução natural do **Algoritmo Guloso** com a adição de um parâmetro &epsilon; que controla um probabilidade do agente, ao invés de executar apenas ações de **explotação**, realizar uma ação aleatória de **exploração**.
 
-## Psuedo Código do Algoritmo
+## Pseudo Código do Algoritmo
 ```
 inicialize de a = 1 até k:
   Q(a) <- 0 
