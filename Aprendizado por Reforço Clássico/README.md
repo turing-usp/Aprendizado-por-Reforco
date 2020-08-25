@@ -6,7 +6,7 @@ Um dos problemas mais clássicos e simples em aprendizado por reforço é o prob
 
 ## Programação Dinâmica
 
-## Métodos de Monte Carlo
+## [Métodos de Monte Carlo](Monte%20Carlo)
 
 ## Temporal-Difference Learning
 
