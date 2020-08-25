@@ -1,6 +1,6 @@
 # 🥄 Algoritmo Guloso (Greedy Algorithm)
 
-Veja a aplicação do algoritmo no [notebook!](greedy.ipynb)
+Veja a implementação do algoritmo no [notebook!](greedy.ipynb)
 
 ## Ideia do Algoritmo
 A ideia deste algoritmo é utilizar apenas a função *argmax*() para apenas **explotar** os *Q*-valores já estimados pelo agente, com a finalidade de sempre escolher a ação com maior valor estimado.

@@ -1,7 +1,7 @@
 
 # 📈 Algoritmo de Limite de Confiança Superior (UCB)
 
-Veja a aplicação do algoritmo no [notebook!](ucb.ipynb)
+Veja a implementação do algoritmo no [notebook!](ucb.ipynb)
 
 ## Ideia do Algoritmo
 A ideia deste algoritmo é utilizar uma função matemática que avalia ações tomadas com menos frequência de tal maneira que incentive o agente a pegá-las, incentivando a **exploração**.

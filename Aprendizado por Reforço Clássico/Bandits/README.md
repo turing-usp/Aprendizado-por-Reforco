@@ -44,6 +44,4 @@ Que é a equação que utilizaremos em nosso algoritmos para estimar *Q*! Lembre
 
 [Algoritmo com UCB](Limite%20de%20Confiança%20Superior) - Um algoritmo que utiliza um parâmetro de **confiança** para **explorar e explotar**.
 
-[Algoritmo de Softmax]() - :construction_worker: :construction:
-
-[Algoritmo de Eliminação Média]() - :construction_worker: :construction:
+[Algoritmo de Softmax](SoftMax) - Um algoritmo que, ao ínves estimar um *Q* valora para o valor médio das recompensas, estima um valor de **preferência** para cada ação.
