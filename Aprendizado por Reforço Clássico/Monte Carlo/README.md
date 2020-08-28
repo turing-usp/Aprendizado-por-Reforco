@@ -17,3 +17,5 @@ Primeiramente, para entender melhor esses métodos, precisamos relembrar de como
 O **Valor Estado-Ação** para uma determinada política é definido como a esperança do retorno ***G*** quando se toma uma determinada ação *a* em um determinado estado *s* seguindo essa política. Dessa forma, é natural pensar que poderíamos estimar esse ***q*** ao tomar uma média de todos os retornos que observarmos depois de tomar uma ação *a* em um estado *s*.
 
 ## Algoritmo
+
+![On-policy every-visit MC control](/img/MC.png)
