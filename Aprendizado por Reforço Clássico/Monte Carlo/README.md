@@ -6,7 +6,7 @@ Os métodos de **Monte Carlo** são algoritmos de Aprendizado por Reforço que e
 
 Apesar de muito eficazes, os algoritmos de **Programação Dinâmica** (**DP**) desenvolvidos anteriormente requerem um conhecimento prévio completo do funcionamento do nosso ambiente, que raramente é obtido em problemas reais. Dessa forma, foi necessário elaborar algoritmos de Aprendizado por Reforço que conseguissem aprender políticas ótimas apenas por meio da interação com o ambiente.
 
-Assim surgiram os **métodos de Monte Carlo**, que se baseam no cálculo da média de vários retornos para obter estimativas das funções de valor. Nesse sentido, esses algoritmos se aproximam bastante do cálculo dos valores no problema dos Bandits.
+Assim surgiram os **métodos de Monte Carlo**, que se baseiam no cálculo da média de vários retornos para obter estimativas das funções de valor. Nesse sentido, esses algoritmos se aproximam bastante do cálculo dos valores no problema dos Bandits.
 
 ## Teoria
 
