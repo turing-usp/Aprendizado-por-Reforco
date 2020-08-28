@@ -43,7 +43,7 @@ Primeiramente, o arquivo deve ser compilado utilizando XeLaTex. Por exemplo, no 
 xelatex -shell-escape algoritmo.tex  # Compila o arquivo latex
 ```
 
-ou no Overleaf com a opção `Compiler: XeLaTeX.
+ou no Overleaf com a opção `Compiler: XeLaTeX`.
 
 Em seguida, é necessário converter o pdf gerado para svg. Recomenda-se o uso da ferramenta Poppler:
 
