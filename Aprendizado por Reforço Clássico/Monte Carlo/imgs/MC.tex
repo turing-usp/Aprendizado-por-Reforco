@@ -1,0 +1,48 @@
+\documentclass[brazilian,preview]{standalone}
+\usepackage[a3paper, margin=0cm]{geometry}
+\usepackage{babel}
+\usepackage[babel, final]{microtype}
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage[math-style=ISO]{unicode-math}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{listings}
+
+\makeatletter
+\lstnewenvironment{algorithm}{
+    \lstset{
+        columns=fullflexible,
+        mathescape,escapechar=@,
+        literate={-}{-}1,
+        morekeywords={Parâmetro,Parâmetros,Inicializar,Loop},
+    }}{}
+\surroundwithmdframed[
+    roundcorner=5pt,
+    linewidth=2pt,
+    linecolor=black!70,
+    backgroundcolor=black!5,
+    frametitlebackgroundcolor=black!70,
+    frametitlefont={\normalfont\bfseries\color{white}},
+    frametitle={Algoritmo.\hspace*{.5em}\@title},
+]{algorithm}
+\makeatother
+
+
+\title{Monte Carlo Every-Visit}
+\geometry{paperwidth=17cm}
+
+\begin{document}
+\begin{algorithm}
+Parâmetro: $\varepsilon\ \mathrm{pequeno} > 0$
+Inicializar:
+    $Q(s, a)$ arbitrário para todo $s$ e $a$
+    $N(s, a) \leftarrow 0$ para todo $s$ e $a$ @\hfill@ (contagem de visitas de cada estado-ação)
+
+Loop para cada episódio:
+    Gerar um episódio seguindo uma política $\varepsilon$-greedy derivada de $Q$, guardando cada tupla $S_t, A_t, R_{t+1}$
+    $G \leftarrow 0$
+    Loop para cada instante do episódio, $t = T-1,\, T-2,\, \dots,\, 0$:
+        $G \leftarrow γG + R_{t+1}$
+        $N(S_t, A_t) \leftarrow N(S_t, A_t) + 1$
+        $Q(S_t, A_t) \leftarrow \dfrac{(N(S_t, A_t) - 1) \cdot Q(S_t, A_t) + G}{N(S_t, A_t)}$ @\hfill @(calculando a média móvel dos retornos)
+\end{algorithm}
+\end{document}
