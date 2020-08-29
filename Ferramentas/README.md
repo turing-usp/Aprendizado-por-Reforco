@@ -4,18 +4,29 @@
 
 ### Fórmulas em geral
 
-As fórmulas devem ser escritas em LaTeX, utilizando o [editor de equações do CodeCogs](https://www.codecogs.com/latex/eqneditor.php)
-em formato SVG, conforme o exemplo abaixo:
+As fórmulas _inline_ (que ficam na mesma linha que outro texto) devem ser
+formatadas, se possível, com unicode e itálico, evitando o uso de imagens.
+Por exemplo, o estado de um ambiente é _s_ e não <img src="https://latex.codecogs.com/svg.latex?s" title="s" />.
+O uso de letras gregas, pode ser feito por meio dos escape codes
+de HTML: `&epsilon;` para &epsilon;, `&Delta;` para &Delta;, `&delta;` para &delta;, etc.
+
+As fórmulas maiores e, em particular, aquelas que não forem _inline_,
+devem ser escritas em LaTeX, utilizando o [editor de equações do CodeCogs](https://www.codecogs.com/latex/eqneditor.php)
+em formato SVG, com o código fonte armazenado no título da imagem. Para tanto, basta selecionar as opções "svg" e "HTML"
+(não "HTML (Edit)") no CodeCogs, conforme o exemplo abaixo:
+
+![editor do CodeCogs](codecogs.png)
 
 ```markdown
 Equação: $\sum_{k=1}^{n} k = \frac{n(n+1)}{2}$
 
-Markdown:
-![\sum_{k=1}^{n} k = \frac{n(n+1)}{2}](https://latex.codecogs.com/svg.latex?%5Csum_%7Bk%3D1%7D%5E%7Bn%7D%20k%20%3D%20%5Cfrac%7Bn%28n&plus;1%29%7D%7B2%7D)
+Markdown (html):
+<img src="https://latex.codecogs.com/svg.latex?\sum_{k=1}^{n}&space;k&space;=&space;\frac{n(n&plus;1)}{2}"
+     title="\sum_{k=1}^{n} k = \frac{n(n+1)}{2}" />
 ```
 
 Imagem:
-![\sum_{k=1}^{n} k = \frac{n(n+1)}{2}](https://latex.codecogs.com/svg.latex?%5Csum_%7Bk%3D1%7D%5E%7Bn%7D%20k%20%3D%20%5Cfrac%7Bn%28n&plus;1%29%7D%7B2%7D)
+<img src="https://latex.codecogs.com/svg.latex?\sum_{k=1}^{n}&space;k&space;=&space;\frac{n(n&plus;1)}{2}" title="\sum_{k=1}^{n} k = \frac{n(n+1)}{2}" />
 
 ### Algoritmos
 
