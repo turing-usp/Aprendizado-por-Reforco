@@ -7,7 +7,7 @@ Veja a implementação do algoritmo no [notebook!](ucb.ipynb)
 A ideia deste algoritmo é utilizar uma função matemática que avalia ações tomadas com menos frequência de tal maneira que incentive o agente a pegá-las, incentivando a **exploração**.
 A função é dada desta maneira:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=UCB_a&space;=&space;Q_t(a)&space;&plus;&space;c&space;\sqrt{\frac{\ln(t)}{N_t(a)}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?UCB_a&space;=&space;Q_t(a)&space;&plus;&space;c&space;\sqrt{\frac{\ln(t)}{N_t(a)}}" title="UCB_a = Q_t(a) + c \sqrt{\frac{\ln(t)}{N_t(a)}}" /></a>
+<img src="https://latex.codecogs.com/svg.latex?UCB_a&space;=&space;Q_t(a)&space;&plus;&space;c&space;\sqrt{\frac{\ln(t)}{N_t(a)}}" title="UCB_a = Q_t(a) + c \sqrt{\frac{\ln(t)}{N_t(a)}}" />
 
 Onde: 
 
@@ -27,18 +27,7 @@ A parte da função que está dentro da raiz quadrada é a **desconfiança**. Co
 Isso significa que nas primeiras iterações o valor de **desconfiança** será maior, principalmente para ações menos frequentes, e como essa desconfiança é somada aos *Q* valores estimados por nosso agente, a função *argmax*(*Q*<sub>*t*</sub>) irá priorizar essas ações. Assim, conforme o agente faz mais ações, como *ln*(*t*) crescera bem menos, enquanto *N*<sub>*t*</sub>(*&alpha;*) continuará crescendo normalmente, o valor de **desconfiança** caíra bastante, tornando assim os valores **conhecidos**.
 
 ## Pseudo Código do Algoritmo
-```
-inicialize de a = 1 até k:
-  Q(a) <- 0 
-  N(a) <- 0 
-Percorra com t para sempre:
-  Faça de a = 1 até k:
-    UCB(a) = Q(a) + c * sqrt(ln(t)/N(A))
-  A <- argmax(UCB)
-  R <- bandit(A) #puxa a alavanca A
-  N(A) <- N(A) + 1
-  Q(A) <- Q(A) + [R - Q(A)]/N(A) 
- ```
+![Pseudo Algoritmo](imgs/algoritmo.svg)
 
 ## Problema do Algoritmo
 Esse algoritmo é uma solução excelente para o problema de *k*-Armed Bandit, e é esse o problema; ele é muito bom apenas para esse problema. Se mudarmos o problema para algo com uma **distribuição probabilística não estacionária** (ou seja, que o valor esperado de cada ação muda) esse algoritmo se demonstra ineficaz.

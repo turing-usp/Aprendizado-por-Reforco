@@ -1,0 +1,50 @@
+\documentclass[brazilian,preview]{standalone}
+\usepackage[margin=0cm]{geometry}
+\usepackage{babel}
+\usepackage[babel, final]{microtype}
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage[math-style=ISO]{unicode-math}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{listings}
+
+\makeatletter
+\lstnewenvironment{algorithm}{
+    \lstset{
+        columns=fullflexible,
+        mathescape,escapechar=@,
+        literate={-}{-}1,
+        morekeywords={Parâmetro,Parâmetros,Inicializar,Loop, Se, Se não},
+    }}{}
+\surroundwithmdframed[
+    roundcorner=5pt,
+    linewidth=2pt,
+    linecolor=black!70,
+    backgroundcolor=black!5,
+    frametitlebackgroundcolor=black!70,
+    frametitlefont={\normalfont\bfseries\color{white}},
+    frametitle={Algoritmo\hspace*{.5em}\@title},
+]{algorithm}
+\makeatother
+
+
+\title{Softmax}
+\geometry{paperwidth=17cm}
+
+\begin{document}
+\begin{algorithm}
+Parâmetros: $k$ braços, parâmetro de ajuste $\alpha$ 
+Inicializar de $a=1$ até k:
+    $H(a) \leftarrow 0$ 
+Loop para cada episódio incrementando $t$:
+    Loop de $a=1$ até k:
+        $\pi(a) \leftarrow softmax(H(a))$ 
+    $A \leftarrow$ Faça uma escolha aleatória com as probabilidades de $\pi$ 
+    $R \leftarrow bandit(A)$ @\hfill@ (puxa a alavanca $A$)
+    $\bar{R} \leftarrow \frac{\bar{R} + R}{t}$
+    Loop de $a=1$ até k:
+      Se $a = A$:
+        $H(a) \leftarrow H(a) + \alpha(R - \bar{R})(1 - \pi(a))$
+      Se não:
+        $H(a) \leftarrow H(a) - \alpha(R - \bar{R})\pi(a)$
+\end{algorithm}
+\end{document}
