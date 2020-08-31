@@ -18,7 +18,7 @@ O algoritmo de Q-Learning é extremamente versátil dentro dos métodos TD, por 
 
 ## Política
 
-A política adotada é a chamada ε-greedy (ε-guloso). Um número aleatório no intervalo entre 0 e 1 é comparado com ε. Se o número aleatório for menor do que o valor de ε, a ação tomada vai ser aleatória, de forma a explorar o ambiente. Caso contrário, a ação vai ser a que possui maior valor Q, de acordo com as estimativas atuais que o algoritmo possui.
+A política adotada é a chamada ε-greedy (ε-guloso). Um número aleatório no intervalo entre 0 e 1 é comparado com ε. Se o número aleatório for menor do que o valor de ε, a ação tomada vai ser aleatória, de forma a explorar o ambiente. Caso contrário, a ação vai ser a que possui maior valor Q, de acordo com as estimativas atuais que o algoritmo possui. Dessa forma, o agente tomará uma ação aleatória com probabilidade ε.
 
 ## Algoritmo
 

@@ -1,0 +1,48 @@
+\documentclass[brazilian,preview]{standalone}
+\usepackage[margin=0cm]{geometry}
+\usepackage{babel}
+\usepackage[babel, final]{microtype}
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage[math-style=ISO]{unicode-math}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{listings}
+
+\makeatletter
+\lstnewenvironment{algorithm}{
+    \lstset{
+        columns=fullflexible,
+        mathescape,escapechar=@,
+        literate={-}{-}1,
+        morekeywords={Parâmetro,Parâmetros,Inicializar,Loop},
+    }}{}
+\surroundwithmdframed[
+    roundcorner=5pt,
+    linewidth=2pt,
+    linecolor=black!70,
+    backgroundcolor=black!5,
+    frametitlebackgroundcolor=black!70,
+    frametitlefont={\normalfont\bfseries\color{white}},
+    frametitle={Algoritmo.\hspace*{.5em}\@title},
+]{algorithm}
+\makeatother
+
+
+\title{Q-Learning}
+\geometry{paperwidth=17cm}
+
+\begin{document}
+\begin{algorithm}
+Parâmetros: $\varepsilon > 0, \alpha \in  [0, 1], \gamma \in  [0, 1] $
+Inicializar:
+    Q(s, a) arbitrário para todo s e a, exceto para Q (terminal, $\cdot$) = 0
+
+Loop para cada episódio:
+    Inicializar S
+    Loop para cada passo do episódio:
+        Escolher A de S usando política derivada de Q (como $\varepsilon$-guloso)
+        Tomar ação A, receber R, S'
+        $Q(S, A) \leftarrow Q(S, A) + \alpha [R + \gamma \max_{a}Q(S', a) - Q(S, A)]$
+        $S \leftarrow S'$
+    Até S ser terminal
+\end{algorithm}
+\end{document}
