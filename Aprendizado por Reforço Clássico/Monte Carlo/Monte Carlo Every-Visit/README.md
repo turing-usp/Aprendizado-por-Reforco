@@ -28,4 +28,4 @@ Para estimar a média dos retornos, podemos utilizar a *média móvel*, de forma
 
 Por fim, podemos ver abaixo um exemplo em pseudo-código do funcionamento do algoritmo de Monte Carlo Every-Visit:
 
-![On-policy every-visit MC control](imgs/MC.png)
+![On-policy every-visit MC control](imgs/MC.svg)
