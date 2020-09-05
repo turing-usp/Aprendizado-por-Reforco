@@ -33,15 +33,15 @@
 \begin{document}
 \begin{algorithm}
 Parâmetros: $k$ braços, parâmetro de controle $c$
-Inicializar de $a=1$ até k:
+Inicializar de $a=1$ até $k$:
     $Q(a) \leftarrow 0$ 
     $N(a) \leftarrow 0$ 
 Loop para cada episódio incrementando $t$:
-    Loop de $a=1$ até k:
-        $UCB(a) \leftarrow Q(a) + c \sqrt{\frac{\ln(t)}{N(a)}}$ 
-    $A \leftarrow argmax(UCB)$ 
-    $R \leftarrow bandit(A)$ @\hfill@ (puxa a alavanca $A$)
+    Loop de $a=1$ até $k$:
+        $\mathit{UCB}(a) \leftarrow Q(a) + c \sqrt{\dfrac{\ln(t)}{N(a)}}$ 
+    $A \leftarrow \operatorname{argmax}(\mathit{UCB})$ 
+    $R \leftarrow \operatorname{bandit}(A)$ @\hfill@ (puxa a alavanca $A$)
     $N(A) \leftarrow N(A) + 1$
-    $Q(A) \leftarrow Q(A) + \frac{[R - Q(A)]}{N(A)}$
+    $Q(A) \leftarrow Q(A) + \dfrac{[R - Q(A)]}{N(A)}$
 \end{algorithm}
 \end{document}

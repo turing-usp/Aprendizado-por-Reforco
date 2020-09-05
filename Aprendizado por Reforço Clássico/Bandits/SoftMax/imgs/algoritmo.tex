@@ -33,15 +33,15 @@
 \begin{document}
 \begin{algorithm}
 Parâmetros: $k$ braços, parâmetro de ajuste $\alpha$ 
-Inicializar de $a=1$ até k:
+Inicializar de $a=1$ até $k$:
     $H(a) \leftarrow 0$ 
 Loop para cada episódio incrementando $t$:
-    Loop de $a=1$ até k:
-        $\pi(a) \leftarrow softmax(H(a))$ 
+    Loop de $a=1$ até $k$:
+        $\pi(a) \leftarrow \operatorname{softmax}(H(a))$ 
     $A \leftarrow$ Faça uma escolha aleatória com as probabilidades de $\pi$ 
-    $R \leftarrow bandit(A)$ @\hfill@ (puxa a alavanca $A$)
-    $\bar{R} \leftarrow \frac{\bar{R} + R}{t}$
-    Loop de $a=1$ até k:
+    $R \leftarrow \operatorname{bandit}(A)$ @\hfill@ (puxa a alavanca $A$)
+    $\bar{R} \leftarrow \dfrac{\bar{R} + R}{t}$
+    Loop de $a=1$ até $k$:
       Se $a = A$:
         $H(a) \leftarrow H(a) + \alpha(R - \bar{R})(1 - \pi(a))$
       Se não:

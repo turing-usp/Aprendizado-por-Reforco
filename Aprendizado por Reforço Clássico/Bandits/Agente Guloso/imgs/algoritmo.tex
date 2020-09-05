@@ -33,13 +33,13 @@
 \begin{document}
 \begin{algorithm}
 Parâmetros: $k$ braços
-Inicializar de $a=1$ até k:
-    $Q(a) \leftarrow 0$ @\hfill@ (Tabela dos valores esimados para cada ação $a$)
+Inicializar de $a=1$ até $k$:
+    $Q(a) \leftarrow 0$ @\hfill@ (Tabela dos valores estimados para cada ação $a$)
     $N(a) \leftarrow 0$ @\hfill@ (Tabela do número de ações para casa ação $a$)
 Loop para cada episódio:
-    $A \leftarrow argmax(Q)$ @\hfill@ (retorna o índice da ação com maior valor estimado em $Q$)
-    $R \leftarrow bandit(A)$ @\hfill@ (puxa a alavanca $A$)
+    $A \leftarrow \operatorname{argmax}(Q)$ @\hfill@ (retorna o índice da ação com maior valor estimado em $Q$)
+    $R \leftarrow \operatorname{bandit}(A)$ @\hfill@ (puxa a alavanca $A$)
     $N(A) \leftarrow N(A) + 1$
-    $Q(A) \leftarrow Q(A) + \frac{[R - Q(A)]}{N(A)}$
+    $Q(A) \leftarrow Q(A) + \dfrac{[R - Q(A)]}{N(A)}$
 \end{algorithm}
 \end{document}

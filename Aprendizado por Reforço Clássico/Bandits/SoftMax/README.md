@@ -19,7 +19,7 @@ Isso se deve pois os valores de preferência *H<sub>t</sub>*(*a*) estão sendo e
 
 ## Atualizando as preferências *H*
 
-Como não estamos usando mais a estimação de *Q* valores, não podemos usar a mesma função para atualizar as preferências *H*. Para essa função utilizamos a ideia de **Método do Gradiente** com um parâmetro definido pelo usuário _**&alpha;**_, que serve para controlar o quanto o algoritmo ajustara os valores das preferências *H*.
+Como não estamos usando mais a estimação de *Q* valores, não podemos usar a mesma função para atualizar as preferências *H*. Para essa função utilizamos a ideia de **Método do Gradiente** com um parâmetro definido pelo usuário _**&alpha;**_, que serve para controlar o quanto o algoritmo ajustará os valores das preferências *H*.
 
 <img src="https://latex.codecogs.com/svg.latex?H_{t&plus;1}(A_t)&space;=&space;H_t(A_t)&space;&plus;&space;\alpha&space;(R_t&space;-&space;\bar{R}_t)(1-\pi_t(A_t))" title="H_{t+1}(A_t) = H_t(A_t) + \alpha (R_t - \bar{R}_t)(1-\pi_t(A_t))" />
 
