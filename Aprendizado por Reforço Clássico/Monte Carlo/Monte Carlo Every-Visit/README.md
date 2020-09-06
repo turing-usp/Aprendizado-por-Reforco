@@ -1,4 +1,6 @@
 # 🏔 Monte Carlo Every Visit
+###### Veja a implementação do algoritmo no [notebook](Monte%20Carlo%20Every-Visit.ipynb)!
+
 
 **Monte Carlo Every-Visit** é um algoritmo de controle por Monte Carlo, ou seja, ele estima nossa função de valor *q(s, a)* a partir dos retornos médios de cada par estado-ação, e toma ações no ambiente com base nessas estimativas. 
 
