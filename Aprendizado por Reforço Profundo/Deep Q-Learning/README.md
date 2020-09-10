@@ -7,3 +7,5 @@ DQN's são alternativas muito boas ao Q-Learning quando precisamos lidar com pro
 ## [Experience Replay](Experience%20Replay)
 
 ## [Deep Q-Network (DQN)](Deep%20Q-Network)
+
+## [N-step Q-learning](N-step%20Q-learning)
