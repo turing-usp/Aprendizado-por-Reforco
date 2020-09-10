@@ -1,0 +1,45 @@
+\documentclass[brazilian,preview]{standalone}
+\usepackage[margin=0cm]{geometry}
+\usepackage{babel}
+\usepackage[babel, final]{microtype}
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage[math-style=ISO]{unicode-math}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{listings}
+
+\makeatletter
+\lstnewenvironment{algorithm}{
+    \lstset{
+        columns=fullflexible,
+        mathescape,escapechar=@,
+        literate={-}{-}1,
+        morekeywords={Parâmetro,Parâmetros,Inicializar,Loop},
+    }}{}
+\surroundwithmdframed[
+    roundcorner=5pt,
+    linewidth=2pt,
+    linecolor=black!70,
+    backgroundcolor=black!5,
+    frametitlebackgroundcolor=black!70,
+    frametitlefont={\normalfont\bfseries\color{white}},
+    frametitle={Algoritmo\hspace*{.5em}\@title},
+]{algorithm}
+\makeatother
+
+
+\title{Guloso}
+\geometry{paperwidth=17cm}
+
+\begin{document}
+\begin{algorithm}
+Parâmetros: $k$ braços
+Inicializar de $a=1$ até $k$:
+    $Q(a) \leftarrow 0$ @\hfill@ (Tabela dos valores estimados para cada ação $a$)
+    $N(a) \leftarrow 0$ @\hfill@ (Tabela do número de ações para casa ação $a$)
+Loop para cada episódio:
+    $A \leftarrow \operatorname{argmax}(Q)$ @\hfill@ (retorna o índice da ação com maior valor estimado em $Q$)
+    $R \leftarrow \operatorname{bandit}(A)$ @\hfill@ (puxa a alavanca $A$)
+    $N(A) \leftarrow N(A) + 1$
+    $Q(A) \leftarrow Q(A) + \dfrac{[R - Q(A)]}{N(A)}$
+\end{algorithm}
+\end{document}
