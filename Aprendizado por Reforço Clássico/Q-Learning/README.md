@@ -1,6 +1,6 @@
 # Algoritmo de Q-Learning
 
-O algoritmo de Q-Learning é um dos algoritmos do grupo TD (Temporal difference, diferença temporal), que estimam a função de valor por meio de uma estimativa a partir de outra estimativa, processo chamado _bootstrap_
+O algoritmo de Q-Learning é um dos algoritmos do grupo TD (Temporal difference, diferença temporal), que estimam a função de valor por meio de uma estimativa a partir de outra estimativa, processo chamado _bootstrapping_
 
 ## Motivação
 
@@ -30,4 +30,4 @@ De forma resumida, o valor Q(S,A) é atualizado fazendo uma "correção" com "ta
 
 O funcionamento do algoritmo ao longo dos episódios pode ser visto no pseudocódigo a seguir:
 
-![Algoritmo de Q-Learning](Imagens/q-learning.svg)
+![Algoritmo de Q-Learning](imgs/q-learning.svg)
