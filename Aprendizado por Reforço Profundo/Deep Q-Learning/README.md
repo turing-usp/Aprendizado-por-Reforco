@@ -8,4 +8,6 @@ DQN's são alternativas muito boas ao Q-Learning quando precisamos lidar com pro
 
 ## [Deep Q-Network (DQN)](Deep%20Q-Network)
 
-## [N-step Q-learning](N-step%20Q-learning)
+## [N-step DQN](N-step%20DQN)
+
+A **N-Step DQN** é uma extensão da DQN que utiliza a informação de uma sequência de várias transições para o cálculo da função de valor, gerando targets mais estáveis.
