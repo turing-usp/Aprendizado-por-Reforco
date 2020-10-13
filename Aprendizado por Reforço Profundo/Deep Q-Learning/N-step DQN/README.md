@@ -29,8 +29,19 @@ Agora que temos uma noção de como o n-step funciona, podemos nos preocupar em 
 
 Tendo esse algoritmo, só precisamos de uma política 𝜋, por exemplo, 𝜀-greedy.
 
-## *Off-policy* n-step
-Para fazermos uma implementação tecnicamente ¨completa¨ de n-step *off-policy*, seria necessário implementar a funcionalidade de *importance sampling* no n-step buffer. Isso necessariamente requer que avaliemos a *importance sampling ratio* (<img src="https://latex.codecogs.com/svg.latex?\rho_{t:t&plus;n-1}" title="\rho_{t:t+n-1}" />) para cada passo a frente (n) que queremos avaliar.
+## *Off-policy* n-Step
+
+Na implementação Off-Policy de n-Step, nosso objetivo é usar as informações obtidas a partir da nossa política atual para obter uma política ótima, da mesma forma como acontecia com o Q-Learning. Para obter a equação do Q-Learning, referente ao 1-step, bastou substituir o Q que dependia da ação escolhida pela nossa política, <img src="https://latex.codecogs.com/svg.latex?Q(S_{t&space;&plus;&space;1},&space;A_{t&space;&plus;&space;1})" title="Q(S_{t + 1}, A_{t + 1})" />, por <img src="https://latex.codecogs.com/svg.latex?max_{a'}Q(S_{t&space;&plus;&space;1},&space;a')" title="max_{a'}Q(S_{t + 1}, a')" />, referente à política ótima:
+
+<img src="https://latex.codecogs.com/svg.latex?G_{t}&space;=&space;R_{t&plus;1}&space;&plus;&space;\gamma&space;Q(S_{t&space;&plus;&space;1},&space;A_{t&space;&plus;&space;1})" title="G_{t} = R_{t+1} + \gamma Q(S_{t + 1}, A_{t + 1})" />
+<br>
+<img src="https://latex.codecogs.com/svg.latex?G_{t}&space;=&space;R_{t&plus;1}&space;&plus;&space;\gamma&space;max_{a'}&space;Q(S_{t&space;&plus;&space;1},&space;a')" title="G_{t} = R_{t+1} + \gamma max_{a'} Q(S_{t + 1}, a')" />
+
+Entretanto, na equação de n-Step Sarsa, os termos <img src="https://latex.codecogs.com/svg.latex?R_{t&plus;i}" title="R_{t+i}" /> também são dependentes da política que estamos seguindo, com exceção do <img src="https://latex.codecogs.com/svg.latex?R_{t&plus;1}" title="R_{t+1}" />, que depende somente da ação tomada no tempo _t_. Basicamente, isso significa que, seguindo a política ótima, obteríamos  recompensas diferentes <img src="https://latex.codecogs.com/svg.latex?R_{t&plus;i}" title="R_{t+i}" />, já que tomamos ações diferentes ao longo da trajetória.
+
+<img src="https://latex.codecogs.com/svg.latex?G_{t:t&space;&plus;&space;n}&space;=&space;R_{t&plus;1}&space;&plus;&space;\gamma&space;R_{t&space;&plus;&space;2}&space;&plus;&space;\gamma^2&space;R_{t&space;&plus;&space;3}&space;&plus;&space;\dots&space;&plus;&space;\gamma^{n&space;-1}&space;R_{t&space;&plus;&space;n}&space;&plus;&space;\gamma^n&space;Q_{t&space;&plus;n&space;-1}(S_{t&space;&plus;&space;n},&space;A_{t&space;&plus;&space;n})" title="G_{t:t + n} = R_{t+1} + \gamma R_{t + 2} + \gamma^2 R_{t + 3} + \dots + \gamma^{n -1} R_{t + n} + \gamma^n Q_{t +n -1}(S_{t + n}, A_{t + n})" />
+
+Dessa forma, seria necessário implementar uma "correção" no nosso cálculo chamada *importance sampling*. Isso necessariamente requer que avaliemos a *importance sampling ratio* (<img src="https://latex.codecogs.com/svg.latex?\rho_{t:t&plus;n-1}" title="\rho_{t:t+n-1}" />) para cada passo a frente (n) que queremos avaliar.
 
 No entanto, com base nos artigos:
 > "Rainbow: Combining Improvements in Deep Reinforcement Learning": https://arxiv.org/pdf/1710.02298.pdf
