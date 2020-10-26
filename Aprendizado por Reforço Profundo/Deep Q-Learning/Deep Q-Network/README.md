@@ -18,7 +18,7 @@ O uso de **redes neurais** nesse algoritmo veio para que consigamos aproximar Q-
 ## Teoria
 
 Então, basicamente, vamos sintetizar a diferença do Q-Learning para DQN:
-<img src="Imagens/Tabela-NN.png" width=600 height=600 />
+<img src="Imagens/Tabela-NN.png" width=800 height=600 />
 
 ### Q-Learning
 
