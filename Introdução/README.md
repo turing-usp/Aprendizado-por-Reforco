@@ -26,27 +26,32 @@ No Aprendizado por Reforço, o **Ambiente** é o espaço que representa o nosso 
 
 Em uma partida de xadrez, o Ambiente é bem simples: ele consiste no conjunto das peças e do tabuleiro.
 
-![Xadrez](https://miro.medium.com/max/625/0*7-LOSdL2eOEAd9R7)
+<p align="center">
+  <img src="https://miro.medium.com/max/625/0*7-LOSdL2eOEAd9R7" title="Xadrez" widht=400 />
 
 ### Estado
 
 O **Estado** se refere às condições do Agente e do Ambiente em um determinado instante. No xadrez, por exemplo, o Estado é a configuração atual do tabuleiro, ou seja, a posição de todas as peças naquele turno. Essa informação é repassada ao Agente, e é a partir dela que o Agente deve tomar suas decisões.
 
-![Estado](https://miro.medium.com/max/304/0*6PVAVr2qsP3oBO6k.jpg)
+<p align="center">
+  <img src="https://miro.medium.com/max/304/0*6PVAVr2qsP3oBO6k.jpg" title="Estado" widht=400 />
 
 Uma observação interessante acerca do Estado é que ele não precisa ser informado em sua totalidade: o Agente, em muitos casos, não possui a informação completa do Ambiente, cabendo a ele deduzir o restante do Estado. Basta pensar em jogos de estratégia como Age of Empires ou Starcraft, em que a posição dos inimigos é encoberta até eles entrarem no seu campo de visão.
 
-![Age of Empires](https://miro.medium.com/max/575/0*VQdhNC0eeBLFykU_)
+<p align="center">
+  <img src="https://i.imgur.com/omtGcGE.gif?noredirect" title="Age of Empires" widht=400 />
 
 ### Ação
 
 O conceito de **Ação** é bem simples: são os **comandos** que o Agente pode escolher em um instante para interagir com o Ambiente. No xadrez, uma Ação é equivalente a um movimento.
 
-![Ação](https://miro.medium.com/max/531/0*JoUU1spyVgWGDs0D.gif)
+<p align="center">
+  <img src="https://miro.medium.com/max/531/0*JoUU1spyVgWGDs0D.gif" title="Ação" widht=400 />
 
 Já o **Espaço de Ação** é o conjunto de todos as ações possíveis. Ou seja, no xadrez, nosso Espaço de Ação é o conjunto de todas as ações possíveis.
 
-![Espaço de Ação](https://img.itch.zone/aW1nLzEzODQ1NzQuZ2lm/original/8hWPC8.gif)
+<p align="center">
+  <img src="https://img.itch.zone/aW1nLzEzODQ1NzQuZ2lm/original/8hWPC8.gif" title="Espaço de Ação" width=300 />
 
 Uma observação interessante é que o Espaço de Ações pode ser discreto ou contínuo. No caso do xadrez, o Espaço de Ações é discreto, já que existe uma quantidade finita de movimentos que podem ser feitos. Entretanto, no caso de um carro autônomo, o Espaço de Ações é contínuo, visto que podemos mandar qualquer velocidade para as rodas. Lidar com espaços contínuos é consideravelmente mais complexo, e não são todos os algoritmos de RL que conseguem resolver esse tipo de problema.
 
@@ -56,7 +61,8 @@ A cada ação tomada, o Ambiente devolve um **feedback** ao Agente relatando a *
 
 No caso do Pac-Man, o agente recebe uma recompensa positiva para cada fantasma / bolota comidos, e uma recompensa negativa quando perde uma vida.
 
-![Recompensa](https://miro.medium.com/max/875/0*cLrwq7tnLpqGDpbg.gif)
+<p align="center">
+  <img src="https://pa1.narvii.com/6800/ce1c943bf1c6049fe704fa49b1ff2925ae8d830e_hq.gif" title="Recompensa" widht=400 />
 
 ### Retorno
 
@@ -66,7 +72,8 @@ O **Retorno** (<img src="https://latex.codecogs.com/svg.latex?G_t" title="G_t" /
 
 Ou seja, se a **Recompensa** era equivalente aos **Pontos** de um jogo, o **Retorno** é análogo ao **Score Total**.
 
-![Retorno](https://miro.medium.com/max/475/0*AiSIzhhdgaVXH2BG.png)
+<p align="center">
+  <img src="https://miro.medium.com/max/475/0*AiSIzhhdgaVXH2BG.png" title="Retorno" />
 
 O Retorno é obtido a partir da seguinte equação:
 
@@ -82,11 +89,13 @@ A **Política** se refere ao processo de decisão do Agente: é o algoritmo que 
 
 Vamos pensar no caso do **Pedra, Papel ou Tesoura**: escolher qualquer uma das três ações aleatoriamente é um tipo de política, cuja probabilidade de cada ação é 1/3 para qualquer estado. Uma outra política possível seria escolher sempre a ação que o seu oponente jogou da última vez. Essa segunda política é chamada **determinística**, já que, para um mesmo estado, a ação do nosso agente será sempre a mesma.
 
-![Política](https://miro.medium.com/max/625/0*q6V6Z-LdoTfDQT1y)
+<p align="center">
+  <img src="https://miro.medium.com/max/625/0*q6V6Z-LdoTfDQT1y" title="Política" width=300 />
 
 Nosso objetivo no Aprendizado por Reforço é descobrir a **Política Ótima** para o nosso agente, que consiste na política que escolhe sempre a melhor ação para cada estado. Essa melhor ação é definida como a ação que vai garantir o maior retorno até o final do jogo.
 
-![Política 2](https://miro.medium.com/max/875/0*L9R23HBRbrbLgrFk.gif)
+<p align="center">
+  <img src="https://miro.medium.com/max/875/0*L9R23HBRbrbLgrFk.gif" title="Política 2" width=450 />
 
 ### Valor de um Estado (V)
 
@@ -98,7 +107,8 @@ Basicamente o valor que representa a recompensa total que costumamos receber ap�
 
 Com o **Valor de um Estado**, podemos escolher Ações que nos levem a Estados que tenham maior Valor. Se o valor de um estado S1 é maior que o valor de um estado S2, devemos tentar chegar em S1.
 
-![Valor de um Estado](https://miro.medium.com/max/875/0*VOBcy2zUf-1-efUm.jpg)
+<p align="center">
+  <img src="https://miro.medium.com/max/875/0*VOBcy2zUf-1-efUm.jpg" title="Valor de um Estado" width=400 />
 
 Esse labirinto é um ótimo exemplo de como usamos o **Valor**: se estamos no estado cujo valor é -15, nós podemos ir para os estados cujos valores são -16, -16 ou -14. Como nesse caso o estado de maior valor é o de -14, a ação que devemos tomar é ir para cima!
 
@@ -110,7 +120,8 @@ O **Valor de uma Ação** consiste no retorno esperado a partir do momento em qu
 
 Dessa forma, o valor q de uma ação representa sua **qualidade**, ou quão bom é tomar aquela ação em um determinado estado.
 
-![Valor-Ação](https://homes.cs.washington.edu/~izadinia/images/QValueUpdate_Q-Learning_epsilonGreedy.gif)
+<p align="center">
+  <img src="https://homes.cs.washington.edu/~izadinia/images/QValueUpdate_Q-Learning_epsilonGreedy.gif" title="Valor-Ação" width=400 />
 
 O objetivo de muitos algoritmos de Aprendizado por Reforço é **estimar** os valores q de cada ação, para então escolher quais ações tomar escolhendo aquela de maior q.
 
@@ -119,6 +130,7 @@ O objetivo de muitos algoritmos de Aprendizado por Reforço é **estimar** os va
 
 No final, o diagrama que acaba representando a Aprendizado por Reforço é o seguinte:
 
-![Diagrama](https://miro.medium.com/max/875/0*DcAwmRiUw8shV2Kh.png)
+<p align="center">
+  <img src="https://miro.medium.com/max/875/0*DcAwmRiUw8shV2Kh.png" title="Diagrama" />
 
 O **Agente** interage com o **Ambiente** por meio de uma **Ação** escolhida por uma **Política** com base no **Estado** atual, recebendo uma **Recompensa** indicando sua efetividade e o Estado seguinte, assim repetindo o ciclo.
