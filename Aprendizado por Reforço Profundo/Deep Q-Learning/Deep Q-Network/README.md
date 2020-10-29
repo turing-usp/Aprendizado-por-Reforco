@@ -50,3 +50,7 @@ Esse tipo de aprendizado é chamado de **off-policy**, porque ele não acontece 
 Aqui nós utilizaremos o **Experience Replay**, em que armazemos as experiências do nosso agente na forma <img src="https://latex.codecogs.com/svg.latex?(s_t,&space;a_t,&space;r_t,&space;s_{t&plus;1})" title="(s_t, a_t, r_t, s_{t+1})" />, ou seja, o **estado** <img src="https://latex.codecogs.com/svg.latex?s_t" title="s_t" /> em que ele estava, a **ação** <img src="https://latex.codecogs.com/svg.latex?a_t" title="a_t" /> que ele tomou naquele estado, a **recompensa** <img src="https://latex.codecogs.com/svg.latex?r_t" title="r_t" /> que ele recebeu por tomar aquela ação naquele estado e o **próximo estado** <img src="https://latex.codecogs.com/svg.latex?s_{t&plus;1}" title="s_{t+1}" /> que o agente foi após aquela ação.
 
 Após coletarmos um certo número dessas tuplas <img src="https://latex.codecogs.com/svg.latex?(s_t,&space;a_t,&space;r_t,&space;s_{t&plus;1})" title="(s_t, a_t, r_t, s_{t+1})" />, nós passamos aleatoriamente esses dados para a rede aprender.
+
+### Pseudo Código do Algoritmo
+
+![Pseudo Algoritmo](imgs/algoritmo.svg)
