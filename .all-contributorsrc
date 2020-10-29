@@ -30,6 +30,17 @@
         "doc",
         "review"
       ]
+    },
+    {
+      "login": "dueiras",
+      "name": "Eduardo Eiras",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/55857466?v=4",
+      "profile": "https://github.com/dueiras",
+      "contributions": [
+        "code",
+        "doc",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7
