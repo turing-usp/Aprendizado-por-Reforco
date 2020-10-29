@@ -63,6 +63,17 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "nelsonayamashita",
+      "name": "Nelson Alves Yamashita",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/46365985?v=4",
+      "profile": "https://github.com/nelsonayamashita",
+      "contributions": [
+        "code",
+        "doc",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7
