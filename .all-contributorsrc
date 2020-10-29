@@ -41,6 +41,18 @@
         "doc",
         "review"
       ]
+    },
+    {
+      "login": "fernandokm",
+      "name": "Fernando Matsumoto",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/12588556?v=4",
+      "profile": "https://github.com/fernandokm",
+      "contributions": [
+        "code",
+        "doc",
+        "review",
+        "tool"
+      ]
     }
   ],
   "contributorsPerLine": 7
