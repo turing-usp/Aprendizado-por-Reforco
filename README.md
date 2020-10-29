@@ -24,6 +24,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/arielguerreiro"><img src="https://avatars1.githubusercontent.com/u/32415652?v=4?s=100" width="100px;" alt=""/><br /><sub><b>arielguerreiro</b></sub></a><br /><a href="https://github.com/GrupoTuring/Aprendizado-por-Reforco/commits?author=arielguerreiro" title="Code">💻</a> <a href="https://github.com/GrupoTuring/Aprendizado-por-Reforco/commits?author=arielguerreiro" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/Berbardo"><img src="https://avatars0.githubusercontent.com/u/48636340?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bernardo Coutinho</b></sub></a><br /><a href="https://github.com/GrupoTuring/Aprendizado-por-Reforco/commits?author=Berbardo" title="Code">💻</a> <a href="https://github.com/GrupoTuring/Aprendizado-por-Reforco/commits?author=Berbardo" title="Documentation">📖</a> <a href="https://github.com/GrupoTuring/Aprendizado-por-Reforco/pulls?q=is%3Apr+reviewed-by%3ABerbardo" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
