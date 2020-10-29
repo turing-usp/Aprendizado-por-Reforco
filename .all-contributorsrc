@@ -1,0 +1,25 @@
+{
+  "projectName": "Aprendizado-por-Reforco",
+  "projectOwner": "GrupoTuring",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "gitmoji",
+  "contributors": [
+    {
+      "login": "arielguerreiro",
+      "name": "arielguerreiro",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32415652?v=4",
+      "profile": "https://github.com/arielguerreiro",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
