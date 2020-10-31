@@ -57,3 +57,6 @@ Logo, a única alteração feita para off-policy em relação a on-policy n-step
 
 <img src="https://latex.codecogs.com/svg.latex?G_{t:t&space;&plus;&space;n}&space;=&space;R_{t&plus;1}&space;&plus;&space;\gamma&space;R_{t&space;&plus;&space;2}&space;&plus;&space;\gamma^2&space;R_{t&space;&plus;&space;3}&space;&plus;&space;\dots&space;&plus;&space;\gamma^{n&space;-1}&space;R_{t&space;&plus;&space;n}&space;&plus;&space;\gamma^n&space;max_{a'}&space;Q_{t&space;&plus;n&space;-1}(S_{t&space;&plus;&space;n},&space;a')" title="G_{t:t + n} = R_{t+1} + \gamma R_{t + 2} + \gamma^2 R_{t + 3} + \dots + \gamma^{n -1} R_{t + n} + \gamma^n max_{a'} Q_{t +n -1}(S_{t + n}, a')" />
 
+### Pseudo Código do Algoritmo
+
+![Pseudo Algoritmo](imgs/algoritmo.svg)
