@@ -1,6 +1,6 @@
 # 🔁 Experience Replay
 
-Uma grande desvantagem das redes neurais é a necessidade de treinar com uma grande quantidade de dados para obter um bom aprendizado. Isso torna seu uso em algoritmos "online" como os de Temporal Difference bem difícil, já que ela recebe apenas uma transição a cada instante de tempo para o treinamento.
+Uma grande desvantagem das redes neurais é a necessidade de treinar com uma grande quantidade de dados para obter um bom aprendizado. Isso torna seu uso em algoritmos como os de Temporal Difference bem difícil, já que eles recebem apenas uma transição a cada instante de tempo para o treinamento.
 
 Entretanto, como Q-Learning é um algoritmo off-policy, nós podemos aproveitar as experiências anteriores do nosso agente para utilizar em um batch no treinamento da nossa rede. É dessa ideia que surge o conceito do **Experience Replay**, um buffer para guardar todas as experiências passadas do nosso agente.
 
