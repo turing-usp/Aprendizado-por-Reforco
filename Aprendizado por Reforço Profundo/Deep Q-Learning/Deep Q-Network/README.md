@@ -35,17 +35,17 @@ A função *loss* será o **erro quadrático médio** entre Q-valor estimado pel
 
 Assim temos:
 - Predição: <img src="https://latex.codecogs.com/svg.latex?Q(S_t,&space;A_t)" title="Q(S_t, A_t)" />
-- Target: <img src="https://latex.codecogs.com/svg.latex?max_a&space;Q(S_{t&plus;1},&space;a)" title="max_a Q(S_{t+1}, a)" />
+- Target: <img src="https://latex.codecogs.com/svg.latex?\max_a&space;Q(S_{t&plus;1},&space;a)" title="\max_a Q(S_{t+1}, a)" />
 
 E nossa função fica, assim como já visto em Q-Learning:
 
-<img src="https://latex.codecogs.com/svg.latex?Q(S_t,&space;A_t)&space;\leftarrow&space;Q(S_t,&space;A_t)&space;&plus;&space;\alpha&space;[R_{t&plus;1}&space;&plus;&space;\gamma&space;max_a&space;Q(S_{t&plus;1},&space;a)&space;-&space;Q(S_t,&space;A_t)]" title="Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha [R_{t+1} + \gamma max_a Q(S_{t+1}, a) - Q(S_t, A_t)]" />
+<img src="https://latex.codecogs.com/svg.latex?Q(S_t,&space;A_t)&space;\leftarrow&space;Q(S_t,&space;A_t)&space;&plus;&space;\alpha&space;[R_{t&plus;1}&space;&plus;&space;\gamma&space;\max_a&space;Q(S_{t&plus;1},&space;a)&space;-&space;Q(S_t,&space;A_t)]" title="Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha [R_{t+1} + \gamma \max_a Q(S_{t+1}, a) - Q(S_t, A_t)]" />
 
 ### Experience Replay 
 
 Pelo jeito que as redes neurais "aprendem", não é muito eficiente passar os dados coletados pelo agente enquanto ele explora o ambiente, é mais efetivo que nosso agente colete várias experiências e, após termos muitos dados, ir "alimentando" nossa rede. 
 
-Esse tipo de aprendizado é chamado de **off-policy**, porque ele não acontece ao mesmo tempo em que nosso agente explora o ambiente.
+Nesse tipo de aprendizagem, os dados que o agente recebe podem vir de qualquer instante de tempo passado, ou seja, esses dados foram obtidos com políticas variadas (visto que a política do agente varia no tempo). Por outro lado, a política que está sendo aprendida pelo agente é a política ótima  &pi;* (e a função ótima _q_*). Esse tipo de aprendizado é chamado de **off-policy**, porque a política que está sendo aprendida é diferente da política de exploração, utilizada para obter os dados.
 
 Aqui nós utilizaremos o **Experience Replay**, em que armazemos as experiências do nosso agente na forma <img src="https://latex.codecogs.com/svg.latex?(s_t,&space;a_t,&space;r_t,&space;s_{t&plus;1})" title="(s_t, a_t, r_t, s_{t+1})" />, ou seja, o **estado** <img src="https://latex.codecogs.com/svg.latex?s_t" title="s_t" /> em que ele estava, a **ação** <img src="https://latex.codecogs.com/svg.latex?a_t" title="a_t" /> que ele tomou naquele estado, a **recompensa** <img src="https://latex.codecogs.com/svg.latex?r_t" title="r_t" /> que ele recebeu por tomar aquela ação naquele estado e o **próximo estado** <img src="https://latex.codecogs.com/svg.latex?s_{t&plus;1}" title="s_{t+1}" /> que o agente foi após aquela ação.
 
