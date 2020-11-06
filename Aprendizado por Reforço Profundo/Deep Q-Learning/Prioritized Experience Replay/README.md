@@ -12,15 +12,17 @@ Essa noção de que experience replay ajuda o agente a relembrar o passado encon
 
 ## Prioritized Experience Replay
 
-Conforme destacam os pesquisadores, uma estratégia melhor que simplesmente escolher experiências aleatórias é escolher, de alguma forma, as experiências que mais contribuem para o aprendizado do agente. Inicialmente, consideraremos o ambiente Blind Cliffwalk, abaixo, em que as setas vermelhas são terminais e a seta verde é a única ação com recompensa não-nula. Nesse caso, a transição mais relevante, destacada em verde, provavelmente será vista muito pouco pelo agente.
+Conforme destacam os pesquisadores em [1], uma estratégia melhor que simplesmente escolher experiências aleatórias é escolher, de alguma forma, as experiências que mais contribuem para o aprendizado do agente. Inicialmente, consideraremos o ambiente Blind Cliffwalk, abaixo, em que as setas vermelhas são terminais e a seta verde é a única ação com recompensa não-nula. Nesse caso, a transição mais relevante, destacada em verde, provavelmente será vista muito pouco pelo agente.
 
-No gráfico da direita, vemos a comparação entre um agente que escolhe experiências aleatóriamente (_uniform_) e outro que utiliza um oráculo, que sempre sabe qual a ação que acarreta na maior redução do custo.
+No gráfico da direita, vemos a comparação entre um agente que escolhe experiências aleatóriamente (_uniform_) e outro que utiliza um oráculo (_oracle_), que sempre sabe qual a ação que acarreta na maior redução do custo. O eixo horizontal indica o tamanho do replay buffer, enquanto o eixo vertical indica o número de updates necessários para treinar o agente. Claramente, o agente com o oráculo aprende mais rápido.
 
-TODO: gráficos
+![blind cliffwalk](imgs/blind_cliffwalk.png)
 
 Como não temos um oráculo à disposição, precisamos de alguma métrica que nos indique o quão surpreendente uma dada experiência é. Uma boa alternativa é a função de custo (ou o TD-error, no caso de Q-Learning tabular), visto que ela está associada à diferença entre a estimativa atual do agente de _Q_(_s_,_a_) e a estimativa de bootstrap.
 
-TODO: gráficos
+O gráfico abaixo, também de [1], mostra que o uso do erro TD é uma aproximação razoável. A linha preta, que indica o método básico de experience replay, é sempre a de aprendizado mais lento. A linha vermelha (_greedy_) corresponde ao erro TD e é claramente melhor do que o método básico, mas pior do que o oráculo (azul).
+
+![comparação entre formas de experience replay](imgs/per_comparison.png)
 
 ## Stochastic Prioritized Experience Replay
 
