@@ -1,0 +1,53 @@
+\documentclass[brazilian,preview]{standalone}
+\usepackage[margin=0cm]{geometry}
+\usepackage{babel}
+\usepackage[babel, final]{microtype}
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage[math-style=ISO]{unicode-math}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{listings}
+
+\makeatletter
+\lstnewenvironment{algorithm}{
+    \lstset{
+        columns=fullflexible,
+        mathescape,escapechar=@,
+        literate={-}{-}1,
+        morekeywords={Parâmetro,Parâmetros,Inicializar,Loop, Se, Se não},
+    }}{}
+\surroundwithmdframed[
+    roundcorner=5pt,
+    linewidth=2pt,
+    linecolor=black!70,
+    backgroundcolor=black!5,
+    frametitlebackgroundcolor=black!70,
+    frametitlefont={\normalfont\bfseries\color{white}},
+    frametitle={Algoritmo\hspace*{.5em}\@title},
+]{algorithm}
+\makeatother
+
+
+\title{DQN com Prioritized Experience Replay}
+\geometry{paperwidth=17cm}
+
+\begin{document}
+\begin{algorithm}
+Parâmetros expoentes $\alpha$ e $\beta$, taxa de aprendizado $\eta$
+Inicializar memória de replay $\mathcal{D}$ de tamanho $N$, perda $\Delta$ = 0, priorização $p_1 = 0$
+Inicializar função de ação-valor $Q$ com pesos aleatórios
+Inicializar estado $S_t$ coletando uma observação
+Loop $t = 1$ até $T$:
+    Armazenar a transições ($S_{t-1},A_{t-1},R_t,S_t$) em $\mathcal{D}$ com prioridade máxima $p_t = \operatorname{max}_{i<t}p_i$
+    Colete uma transição $j \sim P(j) = (\dfrac{p_j}{\sum_i p_i})^\alpha$
+    Compute os pesos do $\emph{importance sampling}$ $w_j = \dfrac{(N \cdot P(j))^{-\beta}}{\operatorname{max}_i w_i}$ 
+    Computar Erro TD $\delta_j$:
+    Se $S_t$ é um estado terminal:
+        $\delta_j = R_j$
+    Se não:
+        $\delta_j = R_j+ \gamma \cdot Q_{target}(S_j, \operatorname{argmax}_aQ(S_j,a)) - Q(S_{j-1}, A_{j-1})$
+    Atualize a prioridade $p_j \leftarrow |\delta_j|$
+    Acumule a mudança de pesos $\Delta \leftarrow \Delta + w_j \cdot \delta_j \cdot \nabla_{\theta}Q(S_{j-1},A_{j-1})$
+    Atualize os pesos $\theta \leftarrow \theta + \eta \cdot \Delta$, reiniciar $\Delta = 0$
+    Escolher ação com base na política $A_t \sim \pi_{\theta}(S_t) $
+\end{algorithm}
+\end{document}

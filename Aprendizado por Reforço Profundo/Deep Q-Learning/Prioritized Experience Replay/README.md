@@ -38,9 +38,7 @@ Em geral, a prioridade é dada por _p<sub>i</sub>_ = |_J<sub>i</sub>_| + &epsilo
 
 Em DQN, utilizamos uma função de custo, e.g. o MSE:
 
-<img src="https://latex.codecogs.com/svg.latex?J_{\mathrm{ideal}}&space;=&space;E\left[{\left(Q(s,a)&space;-&space;Q_{\theta}(s,a)\right)}^2\right],&space;\quad&space;J_{\mathrm{bootstrap},i}&space;=&space;{\left(Q_{\mathrm{bootstrap}}(s_i,a_i)&space;-&space;Q_{\theta}(s_i,a_i)\right)}^2," title="J_{\mathrm{ideal}} = E\left[{\left(Q(s,a) - Q_{\theta}(s,a)\right)}^2\right], \quad J_{\mathrm{bootstrap},i} = {\left(Q_{\mathrm{bootstrap}}(s_i,a_i) - Q_{\theta}(s_i,a_i)\right)}^2," />
-
-<img src="https://latex.codecogs.com/svg.latex?\begin{align*}&space;\theta&space;&\leftarrow&space;\theta&space;&plus;&space;\eta&space;\Delta\theta&space;\\&space;\Delta\theta&space;&=&space;-\frac12\nabla_{\theta}&space;J_{\mathrm{bootstrap}}&space;\\&space;&=&space;\left(Q_{\mathrm{bootstrap}}(s_i,a_i)&space;-&space;Q_{\theta}(s_i,a_i)\right)&space;\cdot&space;\nabla_{\theta}&space;Q_{\theta}(s_i,a_i)&space;\\&space;&=&space;\delta_i&space;\cdot&space;\nabla_{\theta}&space;Q_{\theta}(s_i,a_i).&space;\end{align*}" title="\begin{align*} \theta &\leftarrow \theta + \eta \Delta\theta \\ \Delta\theta &= -\frac12\nabla_{\theta} J_{\mathrm{bootstrap}} \\ &= \left(Q_{\mathrm{bootstrap}}(s_i,a_i) - Q_{\theta}(s_i,a_i)\right) \cdot \nabla_{\theta} Q_{\theta}(s_i,a_i) \\ &= \delta_i \cdot \nabla_{\theta} Q_{\theta}(s_i,a_i). \end{align*}" />
+<img src="https://latex.codecogs.com/svg.latex?\begin{}&space;\\&space;J_{\mathrm{ideal}}&space;=&space;E\left[{\left(Q(s,a)&space;-&space;Q_{\theta}(s,a)\right)}^2\right],&space;J_{\mathrm{bootstrap},i}&space;=&space;{\left(Q_{\mathrm{bootstrap}}(s_i,a_i)&space;-&space;Q_{\theta}(s_i,a_i)\right)}^2,&space;\\&space;\theta&space;\leftarrow&space;\theta&space;&plus;&space;\eta&space;\Delta\theta&space;\\&space;\Delta\theta&space;=&space;-\frac12\nabla_{\theta}&space;J_{\mathrm{bootstrap}}\\&space;=&space;\left(Q_{\mathrm{bootstrap}}(s_i,a_i)&space;-&space;Q_{\theta}(s_i,a_i)\right)&space;\cdot&space;\nabla_{\theta}&space;Q_{\theta}(s_i,a_i)&space;\\&space;=&space;\delta_i&space;\cdot&space;\nabla_{\theta}&space;Q_{\theta}(s_i,a_i).&space;\end{}" title="\begin{} \\ J_{\mathrm{ideal}} = E\left[{\left(Q(s,a) - Q_{\theta}(s,a)\right)}^2\right], J_{\mathrm{bootstrap},i} = {\left(Q_{\mathrm{bootstrap}}(s_i,a_i) - Q_{\theta}(s_i,a_i)\right)}^2, \\ \theta \leftarrow \theta + \eta \Delta\theta \\ \Delta\theta = -\frac12\nabla_{\theta} J_{\mathrm{bootstrap}}\\ = \left(Q_{\mathrm{bootstrap}}(s_i,a_i) - Q_{\theta}(s_i,a_i)\right) \cdot \nabla_{\theta} Q_{\theta}(s_i,a_i) \\ = \delta_i \cdot \nabla_{\theta} Q_{\theta}(s_i,a_i). \end{}" />
 
 A aproximação de bootstrap, de que _J_<sub>bootstrap</sub> &approx; _J_<sub>ideal</sub>, é não enviesada quando as experiências utilizadas para calcular _Q_<sub>bootstrap</sub> têm a mesma distribuição que na esperança. Em outras palavras, quando as ditribuições são as mesmas, espera-se que erros positivos e negativos nessa aproximação se "anulem" com o tempo.
 
@@ -52,11 +50,9 @@ onde &beta;=1 corresponde ao caso não-enviesado (note que as probabilidades fic
 
 Em relação ao treinamento do agente, observa-se que a priorização é mais importante no início do treinamento, enquanto a não-enviesamento é mais importante no final do treinamento, quando o agente já está mais estável. Por isso, é comum aumentar o &beta; linearmente de seu valor inicial &beta; = &beta;<sub>0</sub> até o valor final &beta; = 1.
 
-## O Algoritmo
+### Pseudo Código do Algoritmo
 
-No [notebook](Prioritized%20Experience%20Replay.ipynb), utlizaremos uma combinação da priorização proporcional com o double DQN visto no notebook anterior.
-
-TODO: criar a figura do algoritmo
+![Pseudo Algoritmo](imgs/algoritmo.svg)
 
 ## Referências
 
