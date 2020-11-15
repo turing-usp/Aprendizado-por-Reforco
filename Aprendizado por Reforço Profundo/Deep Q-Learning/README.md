@@ -12,7 +12,7 @@ A versão profunda do Q-Learning, utilizando uma rede neural para aproximar a fu
 
 Buffer que guarda as experiências amostradas em um ambiente para serem utilizadas no treinamento de algoritmos off-policy, de modo a aumentar sua eficiência.
 
-## [Prioritized Experience Replay](Experience%20Replay)
+## [Prioritized Experience Replay](Prioritized%20Experience%20Replay)
 
 Versão alternativa do Replay Buffer. Ao invés de amostrar experiências aleatoriamente, o buffer de PER dá peso maior às experiências que são mais importantes para o agente.
 
