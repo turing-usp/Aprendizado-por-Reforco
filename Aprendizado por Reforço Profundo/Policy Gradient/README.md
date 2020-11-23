@@ -1,6 +1,7 @@
 # Policy Gradient (PG)
 
 ###### Veja a implementação do algoritmo no [notebook](PG.ipynb)!
+###### (Se alguma equação neste README estiver com o link quebrado, você pode checar as equações corretas também no [notebook](PG.ipynb)!)
 
 ## Conceito
 
@@ -27,7 +28,7 @@ Obs: O resto dessa explicação, assim como a tese de referência, assume que a 
 Definida a nossa função objetivo J, precisamos encontrar seu gradiente para então aplicar o gradiente ascendente. Para qualquer uma das funções objetivo especificadas acima, o gradiente de J é dado por:
 <img src="https://latex.codecogs.com/svg.latex?\nabla_\theta&space;J(\theta)&space;=&space;E_{\tau|\theta}\left[\sum_{t=0}^\infty&space;Q(s_t,a_t|\theta)&space;\nabla_\theta&space;\log\pi(a_t|s_t,\theta)\right]" title="\nabla_\theta J(\theta) = E_{\tau|\theta}\left[\sum_{t=0}^\infty Q(s_t,a_t|\theta) \nabla_\theta \log\pi(a_t|s_t,\theta)\right]" />.
 
-A demonstração do teorema encontra-se no [Apêndice](#apendice) deste notebook.
+A demonstração do teorema encontra-se no [Apêndice](#apendice) deste README.
 
 ## REINFORCE
 
