@@ -4,10 +4,6 @@ Um dos algoritmos mais comuns em aprendizado por reforço, quando se trata de ap
 
 DQNs são alternativas muito boas ao Q-Learning quando precisamos lidar com problemas que contém diversos estados, tornando a computação mais leve e o aprendizado mais eficaz.
 
-## [Deep Q-Network (DQN)](Deep%20Q-Network)
-
-A versão profunda do Q-Learning, utilizando uma rede neural para aproximar a função de valor Q.
-
 ## [Experience Replay](Experience%20Replay)
 
 Buffer que guarda as experiências amostradas em um ambiente para serem utilizadas no treinamento de algoritmos off-policy, de modo a aumentar sua eficiência.
@@ -15,6 +11,10 @@ Buffer que guarda as experiências amostradas em um ambiente para serem utilizad
 ## [Prioritized Experience Replay](Prioritized%20Experience%20Replay)
 
 Versão alternativa do Replay Buffer. Ao invés de amostrar experiências aleatoriamente, o buffer de PER dá peso maior às experiências que são mais importantes para o agente.
+
+## [Deep Q-Network (DQN)](Deep%20Q-Network)
+
+A versão profunda do Q-Learning, utilizando uma rede neural para aproximar a função de valor Q.
 
 ## [N-step DQN](N-step%20DQN)
 
