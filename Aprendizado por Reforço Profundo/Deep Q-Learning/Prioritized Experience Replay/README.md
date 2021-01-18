@@ -1,4 +1,5 @@
 # Prioritized Experience Replay
+###### Veja a implementação do algoritmo no [notebook](Prioritized%20Experience%20Replay.ipynb)!
 
 ## Experience Replay
 
