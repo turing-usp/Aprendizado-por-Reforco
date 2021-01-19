@@ -60,5 +60,11 @@ Ou seja:
   E seguimos com nossa expressão do TD Target:
   <img src="https://latex.codecogs.com/svg.latex?Q_{local}(s,a)&space;=&space;r(s,a)&space;&plus;&space;\gamma&space;\cdot&space;Q_{alvejado}(s',&space;argmax_a(&space;Q_{local}(s',a)))" title="Q(s,a) = r(s,a) + \gamma \cdot Q(s', argmax_a Q(s',a))" />
 
- Dessa maneira, com um **Q**<sub>*alvejado*</sub> nós conseguimos "fixar" um valor para ser aproximado pelo **Q**<sub>*local*</sub>, simplificando como a rede pode maximizar o q-valor com um viés menor e de maneira mais estável.
+Dessa maneira, com um **Q**<sub>*alvejado*</sub> nós conseguimos "fixar" um valor para ser aproximado pelo **Q**<sub>*local*</sub>, simplificando como a rede pode maximizar o q-valor com um viés menor e de maneira mais estável.
 
+Importante notar que faremos apenas o proceso de *backpropagation* na rede local. Para a rede alvejada nós copiaremos os parâmetros de uma para a outra, com um parâmetro *&tau;* definindo quanto uma influênciará a outra.
+
+
+### Pseudo Código do Algoritmo
+
+![Pseudo Algoritmo](imgs/algoritmo.svg)
