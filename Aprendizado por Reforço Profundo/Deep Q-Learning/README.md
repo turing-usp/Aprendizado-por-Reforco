@@ -12,6 +12,10 @@ Buffer que guarda as experiências amostradas em um ambiente para serem utilizad
 
 A versão profunda do Q-Learning, utilizando uma rede neural para aproximar a função de valor Q.
 
+## [Double DQN](Double%20DQN)
+
+Uma extensão do algoritmo de DQN com correção de viés que estabiliza a performance do treinamento do agente
+
 ## [N-step DQN](N-step%20DQN)
 
 A **N-Step DQN** é uma extensão da DQN que utiliza a informação de uma sequência de várias transições para o cálculo da função de valor, gerando targets mais estáveis.
