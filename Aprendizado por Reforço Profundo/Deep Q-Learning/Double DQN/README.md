@@ -19,11 +19,11 @@ Para problemas em que o método tabular não dá conta, como visto no [notebook 
 ## Teoria
 Talvez você tenha notado que no algoritmo de Q-learning nós utilizamos uma estimativa do q-valor para fazer uma estimativa do nosso q-valor, as DDQN's surgiram como o objetivo de lidar com este problema.
 
-Nossa equação para o Target (bootstrap) é a seguinte:
+Nossa equação para o bootstrap é a seguinte:
 
 <img src="https://latex.codecogs.com/svg.latex?Q_{bootstrap}(s,a)&space;=&space;r(s,a)&space;&plus;&space;\gamma&space;\cdot&space;max_a&space;Q(s',a)" title="Q_{bootstrap}(s,a) = r(s,a) + \gamma \cdot max_a Q(s',a)" />
 
-O Q target vira a soma da recompensa ao tomar a ação a no estado s, mais o valor máximo de **Q** dentre todas as possíveis ações no estado seguinte descontado do Q anterior.
+O Q target vira a soma da recompensa ao tomar a ação a no estado s, mais o valor máximo de **Q** dentre todas as possíveis ações. Repare que, basicamente o que estamos fazendo é criar uma estimativa nova que depende dela mesma; que depende de uma estimativa anterior que está constantemente mudando:
 
 A função de custo (J) que usaremos para os pesos da rede é dado pela fórmula:
 
@@ -41,24 +41,24 @@ Mas o que pode acontecer a partir disso é que estaremos escolhendo ações que 
 
 ### Solução:
 
-Quando calcularemos o <img src="https://latex.codecogs.com/svg.latex?Q_{bootstrap}" title="Q_{bootstrap}" /> nós usaremos duas redes idênticas para separar a escolha de melhor ação do cálculo do q-valor. 
+Quando calcularemos o **Q**<sub>*bootstrap*</sub> nós usaremos duas redes idênticas para separar a escolha de melhor ação do cálculo do q-valor. 
 
-  - Usamos uma rede DQN para selecionar qual é a melhor ação a ser tomada no próximo estado. (Ação com maior q-valor.)
+  - Usamos uma rede DQN **Q**<sub>*local*</sub> para selecionar qual é a melhor ação a ser tomada no próximo estado. (Ação com maior q-valor.)
 
-  -  Usamos uma rede <img src="https://latex.codecogs.com/svg.latex?Q_{bootstrap}" title="Q_{bootstrap}" /> para calcular o q-valor de tomar essa ação no próximo estado.
+  -  Usamos uma rede DQN **Q**<sub>*alvejado*</sub> para calcular o q-valor de tomar essa ação no próximo estado.
 
 Ou seja:
 
   - Rede DQN para escolher melhor ação para o próximo estado:  
-    <img src="https://latex.codecogs.com/svg.latex? argmax_a&space;Q(s',a))" title="Q(s', argmax_a Q(s',a))" />
+    <img src="https://latex.codecogs.com/svg.latex? argmax_a(&space;Q_{local}(s',a))" title="Q(s', argmax_a Q_{local}(s',a))" />
 
-  - Rede <img src="https://latex.codecogs.com/svg.latex?Q_{bootstrap}" title="Q_{bootstrap}" /> calculando **Q** valor da escolha acima:
+  - Rede **Q**<sub>*alvejado*</sub> calculando o valor **Q**  da escolha acima:
   
-    <img src="https://latex.codecogs.com/svg.latex?Q(s',&space;argmax_a&space;Q(s',a))" title="Q(s', argmax_a Q(s',a))" />
+    <img src="https://latex.codecogs.com/svg.latex?Q_{alvejado}(s',&space;argmax_a(&space;Q_{local}(s',a)))" title="Q(s', argmax_a Q(s',a))" />
 
 
   E seguimos com nossa expressão do TD Target:
-  <img src="https://latex.codecogs.com/svg.latex?Q(s,a)&space;=&space;r(s,a)&space;&plus;&space;\gamma&space;\cdot&space;Q(s',&space;argmax_a&space;Q(s',a))" title="Q(s,a) = r(s,a) + \gamma \cdot Q(s', argmax_a Q(s',a))" />
+  <img src="https://latex.codecogs.com/svg.latex?Q_{local}(s,a)&space;=&space;r(s,a)&space;&plus;&space;\gamma&space;\cdot&space;Q_{alvejado}(s',&space;argmax_a(&space;Q_{local}(s',a)))" title="Q(s,a) = r(s,a) + \gamma \cdot Q(s', argmax_a Q(s',a))" />
 
-  A Double DQN ajuda assim a reduzir uma estimativa elevada dos q-valores e portando o algoritmo fica mais preciso e mais rápido de treinar. 
+ Dessa maneira, com um **Q**<sub>*alvejado*</sub> nós conseguimos "fixar" um valor para ser aproximado pelo **Q**<sub>*local*</sub>, simplificando como a rede pode maximizar o q-valor com um viés menor e de maneira mais estável.
 
