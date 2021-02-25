@@ -6,7 +6,7 @@ O algoritmo de Q-Learning é um dos algoritmos do grupo TD (Temporal difference,
 
 Assim como nos métodos de Monte Carlo, os métodos TD tem vantagens sobre os métodos de Programação Dinâmica (DP) por não dependerem de um modelo do ambiente para seu funcionamento, sendo capazes de aprender diretamente com a experiência
 
-Porém, os métodos TD tem uma vantagem sobre os métodos de Monte Carlo (MC), pois são capazes de aprendizado _online_, ou seja, aprendem com a passagem do episódio, enquanto os métodos de MC precisam chegar no final do episódio para iniciar o aprendizado. Em episódios longos ou em ações contínuas, sem episódios, os métodos MC se tornam inviáveis.
+No entanto, os métodos TD têm uma vantagem sobre os métodos de Monte Carlo (MC), pois são capazes de aprendizado _online_, ou seja, aprendem com a passagem do episódio, enquanto os métodos de MC precisam chegar no final do episódio para iniciar o aprendizado. Em episódios longos ou em ações contínuas, sem episódios, os métodos MC se tornam inviáveis.
 
 ## Teoria
 
