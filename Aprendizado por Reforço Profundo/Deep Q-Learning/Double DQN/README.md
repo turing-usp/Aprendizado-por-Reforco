@@ -1,29 +1,29 @@
 # Double DQN
-> Uma extensão do algoritmo de DQN com correção de viés que estabiliza a performance do treinamento do agente
+> Uma extensão do algoritmo de DQN com correção de viés que estabiliza a performance do treinamento do agente.
 
 
 ## Relembrando alguns conceitos
 
 **Algoritmo de Q-Learning:** 
 
-<img src="https://latex.codecogs.com/svg.latex?Q(s,a)&space;\leftarrow&space;Q(s,a)&space;&plus;&space;\alpha&space;[R(s,a)&space;&plus;&space;\gamma&space;\cdot&space;max_{a'}&space;Q'(s',&space;a')&space;-&space;Q(s,a)]" title="Q(s,a) \leftarrow Q(s,a) + \alpha [R(s,a) + \gamma \cdot max_{a'} Q'(s', a') - Q(s,a)]" />
+<img src="https://latex.codecogs.com/svg.latex?Q(s,a)&space;\leftarrow&space;Q(s,a)&space;&plus;&space;\alpha&space;[R_{t+1}&space;&plus;&space;\gamma&space;\cdot&space;max_{a'}&space;Q'(s',&space;a')&space;-&space;Q(s,a)]" title="Q(s,a) \leftarrow Q(s,a) + \alpha [R_{t+1} + \gamma \cdot max_{a'} Q'(s', a') - Q(s,a)]" />
 
 Esse algoritmo, como sabemos, tem como objetivo atualizar as estimativas dos Q valores para os pares estado-ação do ambiente. O valor de Q é atualizado por meio de uma "parcela de correção de erro" (parcela de atualização), com uma taxa de aprendizado α.
 
-A atualização é composta pela recompensa imediata pela última ação tomada **R(s,a)**, o fator de desconto γ multiplicando o o maior valor possível esperado de retorno naquele novo estado (após a última ação) menos o valor atual de Q.
+A atualização é composta pela recompensa imediata pela última ação tomada ***R<sub>t+1<sub>***, o fator de desconto γ multiplicando o maior valor possível esperado de retorno naquele novo estado (após a última ação) menos o valor atual de Q.
 
 **DQN:**
 
 Para problemas em que o método tabular não dá conta, como visto no [notebook de DQN](../Deep%20Q-Network), utilizamos uma rede neural para estimar os valores Q. Porém, ao utilizar somente uma rede neural, os valores de Q tendem a ser superestimados, gerando treinamento menos eficiente e podendo levar a políticas sub-ótimas. Para tentar estabilizar o treinamento, utilizaremos então uma segunda rede neural, chegando no algoritmo DDQN.
 
 ## Teoria
-Talvez você tenha notado que no algoritmo de Q-learning nós utilizamos uma estimativa do q-valor para fazer uma estimativa do nosso q-valor, as DDQN's surgiram como o objetivo de lidar com este problema.
+Talvez você tenha notado que no algoritmo de Q-learning nós utilizamos uma estimativa do q-valor para fazer uma estimativa do nosso q-valor, as DDQN's surgiram com o objetivo de lidar com este problema.
 
 Nossa equação para o bootstrap é a seguinte:
 
-<img src="https://latex.codecogs.com/svg.latex?Q_{bootstrap}(s,a)&space;=&space;r(s,a)&space;&plus;&space;\gamma&space;\cdot&space;max_a&space;Q(s',a)" title="Q_{bootstrap}(s,a) = r(s,a) + \gamma \cdot max_a Q(s',a)" />
+<img src="https://latex.codecogs.com/svg.latex?Q_{bootstrap}(s,a)&space;=&space;R_{t+1}&space;&plus;&space;\gamma&space;\cdot&space;max_a&space;Q(s',a)" title="Q_{bootstrap}(s,a) = r(s,a) + \gamma \cdot max_a Q(s',a)" />
 
-O Q target vira a soma da recompensa ao tomar a ação a no estado s, mais o valor máximo de **Q** dentre todas as possíveis ações. Repare que, basicamente o que estamos fazendo é criar uma estimativa nova que depende dela mesma; que depende de uma estimativa anterior que está constantemente mudando:
+O Q target vira a soma da recompensa ao tomar a ação *a* no estado *s*, mais o valor máximo de **Q** dentre todas as possíveis ações. Repare que, basicamente o que estamos fazendo é criar uma estimativa nova que depende dela mesma; que depende de uma estimativa anterior que está constantemente mudando:
 
 A função de custo (J) que usaremos para os pesos da rede é dado pela fórmula:
 
@@ -43,24 +43,24 @@ Mas o que pode acontecer a partir disso é que estaremos escolhendo ações que 
 
 Quando calcularemos o **Q**<sub>*bootstrap*</sub> nós usaremos duas redes idênticas para separar a escolha de melhor ação do cálculo do q-valor. 
 
-  - Usamos uma rede DQN **Q**<sub>*local*</sub> para selecionar qual é a melhor ação a ser tomada no próximo estado. (Ação com maior q-valor.)
+  - Usamos uma rede DQN **Q**<sub>*local*</sub> para selecionar qual é a melhor ação a ser tomada no próximo estado. (Ação com maior q-valor).
 
-  -  Usamos uma rede DQN **Q**<sub>*alvejado*</sub> para calcular o q-valor de tomar essa ação no próximo estado.
+  -  Usamos uma rede DQN **Q**<sub>*target*</sub> para calcular o q-valor de tomar essa ação no próximo estado.
 
 Ou seja:
 
   - Rede DQN para escolher melhor ação para o próximo estado:  
     <img src="https://latex.codecogs.com/svg.latex? argmax_a(&space;Q_{local}(s',a))" title="Q(s', argmax_a Q_{local}(s',a))" />
 
-  - Rede **Q**<sub>*alvejado*</sub> calculando o valor **Q**  da escolha acima:
+  - Rede **Q**<sub>*target*</sub> calculando o valor **Q**  da escolha acima:
   
-    <img src="https://latex.codecogs.com/svg.latex?Q_{alvejado}(s',&space;argmax_a(&space;Q_{local}(s',a)))" title="Q(s', argmax_a Q(s',a))" />
+    <img src="https://latex.codecogs.com/svg.latex?Q_{target}(s',&space;argmax_a(&space;Q_{local}(s',a)))" title="Q(s', argmax_a Q(s',a))" />
 
 
   E seguimos com nossa expressão do TD Target:
-  <img src="https://latex.codecogs.com/svg.latex?Q_{local}(s,a)&space;=&space;r(s,a)&space;&plus;&space;\gamma&space;\cdot&space;Q_{alvejado}(s',&space;argmax_a(&space;Q_{local}(s',a)))" title="Q(s,a) = r(s,a) + \gamma \cdot Q(s', argmax_a Q(s',a))" />
+  <img src="https://latex.codecogs.com/svg.latex?Q_{local}(s,a)&space;=&space;R_{t+1}&space;&plus;&space;\gamma&space;\cdot&space;Q_{target}(s',&space;argmax_a(&space;Q_{local}(s',a)))" title="Q(s,a) = r(s,a) + \gamma \cdot Q(s', argmax_a Q(s',a))" />
 
-Dessa maneira, com um **Q**<sub>*alvejado*</sub> nós conseguimos "fixar" um valor para ser aproximado pelo **Q**<sub>*local*</sub>, simplificando como a rede pode maximizar o q-valor com um viés menor e de maneira mais estável.
+Dessa maneira, com um **Q**<sub>*target*</sub> nós conseguimos "fixar" um valor para ser aproximado pelo **Q**<sub>*local*</sub>, simplificando como a rede pode maximizar o q-valor com um viés menor e de maneira mais estável.
 
 Importante notar que faremos apenas o proceso de *backpropagation* na rede local. Para a rede alvejada nós copiaremos os parâmetros de uma para a outra, com um parâmetro *&tau;* definindo quanto uma influênciará a outra.
 
