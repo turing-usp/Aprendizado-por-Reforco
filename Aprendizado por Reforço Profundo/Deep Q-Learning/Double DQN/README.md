@@ -43,7 +43,7 @@ Mas o que pode acontecer a partir disso é que estaremos escolhendo ações que 
 
 Quando calcularemos o **Q**<sub>*bootstrap*</sub> nós usaremos duas redes idênticas para separar a escolha de melhor ação do cálculo do q-valor. 
 
-  - Usamos uma rede DQN **Q**<sub>*local*</sub> para selecionar qual é a melhor ação a ser tomada no próximo estado. (Ação com maior q-valor).
+  - Usamos uma rede DQN **Q**<sub>*local*</sub> para selecionar qual é a melhor ação a ser tomada no próximo estado (ação com maior q-valor).
 
   -  Usamos uma rede DQN **Q**<sub>*target*</sub> para calcular o q-valor de tomar essa ação no próximo estado.
 
