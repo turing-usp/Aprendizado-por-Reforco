@@ -37,7 +37,7 @@ O que fazemos então é aproximar nosso **q(s,a)**, obtendo também um **J(w)** 
 
 <img src="https://latex.codecogs.com/svg.latex?J(w)_{\mathrm{bootstrap}}&space;=&space;\mathbf{E}&space;[(Q_{\mathrm{bootstrap}}(s,a)&space;-&space;Q_w(s,a))^2]" title="J(w)_{\mathrm{bootstrap}} = \mathbf{E} [(Q_{\mathrm{bootstrap}}(s,a) - Q_w(s,a))^2]" />
 
-Mas o que pode acontecer a partir disso é que estaremos escolhendo ações que possuem o maior q-valor sem ter tanta certeza de que isso não é um falso positivo, de que não estamos obtendo um q-valor maior para ações não ótimas do que para ações ótimas.
+Mas o que pode acontecer a partir disso é que estaremos escolhendo ações que possuem o maior q-valor sem ter tanta certeza de que isso não é um falso positivo, de que não estamos obtendo um q-valor maior para ações não ótimas do que para ações ótimas. O nome desse viés é ***Maximization Bias***, e você pode ler mais sobre ele no incrível [livro de RL dos autores Sutton e Barto](http://incompleteideas.net/book/RLbook2020.pdf).
 
 ### Solução:
 
