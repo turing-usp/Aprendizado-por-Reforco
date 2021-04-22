@@ -1,0 +1,53 @@
+\documentclass[brazilian,preview]{standalone}
+\usepackage[margin=0cm]{geometry}
+\usepackage{babel}
+\usepackage[babel, final]{microtype}
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage[math-style=ISO]{unicode-math}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{listings}
+
+\makeatletter
+\lstnewenvironment{algorithm}{
+    \lstset{
+        columns=fullflexible,
+        mathescape,escapechar=@,
+        literate={-}{-}1,
+        morekeywords={Parâmetro,Parâmetros,Inicializar,Loop, Se, Se não},
+    }}{}
+\surroundwithmdframed[
+    roundcorner=5pt,
+    linewidth=2pt,
+    linecolor=black!70,
+    backgroundcolor=black!5,
+    frametitlebackgroundcolor=black!70,
+    frametitlefont={\normalfont\bfseries\color{white}},
+    frametitle={Algoritmo\hspace*{.5em}\@title},
+]{algorithm}
+\makeatother
+
+
+\title{Double Deep Q-Network}
+\geometry{paperwidth=17cm}
+
+\begin{document}
+\begin{algorithm}
+Parâmetros $\tau$ de influência da rede local sobre a fixa
+Inicializar memória de replay $\mathcal{D}$ de tamanho $N$
+Inicializar funções de ação-valor $Q_{\mathrm{local}}$ e $Q_{\mathrm{alvejado}}$ com pesos aleatórios
+Inicializar estado $S_t$ coletando uma observação
+Loop $t = 1$ até $T$:
+    Loop para cada passo do ambiente:
+        Selecionar uma ação $a$ com probailidade $\epsilon$ se não $a = \arg\max_a(Q(s,a))$
+        Executar $a$ e observar a recompensa $r$ e próxmo estado $s'$
+        Armazenar a transição $(s,a,r,s')$ na memória de replay
+    Loop para cada passo de atualização:
+        Pegar uma amostra aleatória das transições da memória $\mathcal{D}$
+        Computar o $Q$ valor estimado:
+            $Q^*(s_t,a_t) \approx r_t + \gamma \cdot Q_{\mathrm{alvejado}}(s_{t+1}, \arg\max_a, Q_{\mathrm{local}}(s_t+1,a'))$
+        Performar um passo do método do gradiente em $(Q^*(s_t,a_t) - Q_{\mathrm{local}}(s_t,a_t))^2$
+        Atualizar os parâmetros da da rede alvejada
+            $\theta' \leftarrow \tau * \theta + (1-\tau) * \theta'$
+
+\end{algorithm}
+\end{document}
