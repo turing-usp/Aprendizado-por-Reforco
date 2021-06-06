@@ -1,0 +1,57 @@
+\documentclass[brazilian,preview]{standalone}
+\usepackage[margin=0cm]{geometry}
+\usepackage{babel}
+\usepackage[babel, final]{microtype}
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage[math-style=ISO]{unicode-math}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{listings}
+
+\makeatletter
+\lstnewenvironment{algorithm}{
+    \lstset{
+        columns=fullflexible,
+        mathescape,escapechar=@,
+        literate={-}{-}1,
+        morekeywords={Parâmetro,Parâmetros,Inicializar,Loop, Se, Se não},
+    }}{}
+\surroundwithmdframed[
+    roundcorner=5pt,
+    linewidth=2pt,
+    linecolor=black!70,
+    backgroundcolor=black!5,
+    frametitlebackgroundcolor=black!70,
+    frametitlefont={\normalfont\bfseries\color{white}},
+    frametitle={Algoritmo\hspace*{.5em}\@title},
+]{algorithm}
+\makeatother
+
+
+\title{DQN com $n$-step}
+\geometry{paperwidth=17cm}
+
+\begin{document}
+\begin{algorithm}
+Parâmetros taxa de aprendizado $\alpha  \in (0,1]$, pequeno $\epsilon > 0$, inteiro positivo $n$
+Inicializar memória de replay $\mathcal{D}$ de tamanho $N$
+Inicializar função de ação-valor $Q$ com pesos aleatórios
+Todo armazenamento e operações de $\mathcal{D}$ podem ser acessados por seu índex mod $n+1$
+Loop episódio = 1 até $M$:
+    Inicializar estado $s_t$ coletando uma observação
+    Loop $t = 1$ até $T$:
+        Com probabilidade $\epsilon$ escolha ação $a_t$
+        Caso contrário selecione $a_t \leftarrow \operatorname{max}_{a} Q^*(s_t, a')$
+        Execute ação $a_t$ e observe a recompensa $r_t$ e estado $s_{t+1}$
+        Guarde a transição ($s_t,a_t,r_t,s_{t+1}$) em $\mathcal{D}$
+        Coletar um pequena leva aleatória de transições ($s_j,a_j,r_j,s_{j+1}$) de $\mathcal{D}$
+        $\tau \leftarrow t - n + 1$
+        Se $\tau \geq 0$:
+            $G \leftarrow \Sigma_{i=\tau+1}^{\operatorname{min}(\tau+n,T)}\gamma^{i-\tau-1}r_i$
+        Se $s_{t+1}$ é um estado terminal:
+            $y_j \leftarrow G$
+        Se não e $\tau \geq 0$:
+            $y_j \leftarrow G + \gamma \operatorname{max}_{a'}Q(s_{j+1}, a')$
+        Treine o agente executando um método do gradiente com $(y_j - Q(s_j,a_j'))^2$
+        $s_{t+1} \leftarrow s_{t}$ 
+\end{algorithm}
+\end{document}

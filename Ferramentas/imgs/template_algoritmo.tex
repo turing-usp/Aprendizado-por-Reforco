@@ -1,0 +1,42 @@
+\documentclass[brazilian,preview]{standalone}
+\usepackage[paperwidth=17cm,margin=0cm]{geometry}
+\usepackage{babel}
+\usepackage[babel, final]{microtype}
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage[math-style=ISO]{unicode-math}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{listings}
+
+\makeatletter
+\lstnewenvironment{algorithm}{
+    \lstset{
+        columns=fullflexible,
+        mathescape,escapechar=@,
+        literate={-}{-}1,
+        morekeywords={Parâmetro,Parâmetros,Inicializar,Loop},
+    }}{}
+\surroundwithmdframed[
+    roundcorner=5pt,
+    linewidth=2pt,
+    linecolor=black!70,
+    backgroundcolor=black!5,
+    frametitlebackgroundcolor=black!70,
+    frametitlefont={\normalfont\bfseries\color{white}},
+    frametitle={Algoritmo.\hspace*{.5em}\@title},
+]{algorithm}
+\makeatother
+
+
+\title{Exemplo}
+
+\begin{document}
+\begin{algorithm}
+Parâmetros: $\varepsilon > 0, \dots$
+Inicializar:
+    parâmetros...
+
+Loop para cada episódio: @\hfill@ (comentário)
+    ...
+\end{algorithm}
+\end{document}
+
