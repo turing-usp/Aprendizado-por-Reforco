@@ -51,14 +51,13 @@ Dessa forma, podemos estimar o gradiente do Advantage Actor-Critic pela seguinte
 
 O algoritmo inicial foi o A3C (Asynchronous Advantage Actor Critic), por meio de um paper da Deepmind ([Paper de A3C](https://arxiv.org/abs/1602.01783)). Segundo a OpenAI, a parte assíncrona do A3C não traz grande vantagem e é menos eficiente, por isso a ideia do A2C. Não tenho capacidade de entrar no mérito, então vou só pontuar as diferenças.
 
-
 Ambos os algoritmos atuam em múltiplos ambientes simultâneos, mas enquanto o A3C é atualizado cada vez que um deles termina uma batch de experiências, por isso assíncrono, o A2C espera todos os agentes obterem uma batch para então atualizar com todas simultaneamente, usando a média do update. As diferenças podem ser conferidas [neste link da OpenAI](https://openai.com/blog/baselines-acktr-a2c/).
 
 ## Algoritmo do A2C
 
 O pseudocódigo do A2C pode ser visto na imagem a seguir:
 
-![pseudocode](https://i.postimg.cc/w38KTJQb/A2C-v6.png)
+![pseudocode](imgs/A2C.svg)
 
 É importante ressaltar que essa versão utiliza duas redes neurais, uma para o crítico e outra para o ator, mas implementações com uma só rede são possíveis e serão mostradas abaixo.
 
