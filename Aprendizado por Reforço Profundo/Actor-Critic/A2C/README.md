@@ -37,9 +37,11 @@ Uma das formas de estimar o valor de A(s, a) é usando o nosso velho amigo **boo
 
 <img src="https://latex.codecogs.com/svg.latex?Q(s,a)&space;=&space;r&space;&plus;&space;\gamma&space;V(s')" title="Q(s,a) = r + \gamma V(s')" />
 
-Reescrevendo a vantagem, temos:
+Reescrevendo a vantagem, temos que ela pode ser aproximada a seguir:
 
 <img src="https://latex.codecogs.com/svg.latex?A(s,a)&space;=&space;r&space;&plus;&space;\gamma&space;V(s')&space;-&space;V(s)" title="A(s,a) = r + \gamma V(s') - V(s)" />
+
+É interessante notar que essa forma de aproximar a vantagem usa o mesmo cálculo do Erro de Temporal Difference: <img src="https://latex.codecogs.com/svg.latex?\inline&space;\delta_t&space;=&space;r&space;&plus;&space;\gamma&space;V(s')&space;-&space;V(s)" title="\delta_t = r + \gamma V(s') - V(s)" />. Apesar disso, a vantagem também pode ser aproximada de outras maneiras.
 
 Com essa fórmula, precisamos estimar somente V e não Q. Existem outras formas de estimar a vantagem, como a [Generalized Advantage Estimation](https://arxiv.org/pdf/1506.02438.pdf)
 
