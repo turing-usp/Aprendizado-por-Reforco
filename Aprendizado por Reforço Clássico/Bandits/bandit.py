@@ -2,8 +2,8 @@ import numpy as np
 
 class GaussianBandit(object):
 
-    def __init__(self, k_bracos=10):
-        self.bandits_expectations = np.random.normal(0,1,k_bracos)
+    def __init__(self, k_arms=10):
+        self.bandits_expectations = np.random.normal(0,1,k_arms)
     
     def gamble(self, action):
         """ação(int) -> recompensa(int)
