@@ -3,11 +3,11 @@
 
 Como vimos na aula de Policy Gradients, existem algoritmos capazes de aprender a política diretamente, utilizando gradiente ascendente neste processo. Porém, modelos como REINFORCE sofrem com grande variância. Para tentar solucionar este problema, surge a ideia de utilizar uma estimativa do retorno. Cada uma dessas estimativas leva a diferentes algoritmos Actor-Critic. Hoje, vamos abordar uma delas, a Advantage (vantagem):
 
-<img src="https://latex.codecogs.com/svg.latex?\nabla_\theta&space;J(\theta)&space;=&space;\mathbb{E}{\pi\theta}&space;[\nabla_\theta&space;log&space;\pi_\theta(s,a)\&space;G_t]\&space;\&space;\&space;\text{REINFORCE}" title="\nabla_\theta J(\theta) = \mathbb{E}{\pi\theta} [\nabla_\theta log \pi_\theta(s,a)\ G_t]\ \ \ \text{REINFORCE}" />
+<img src="https://latex.codecogs.com/svg.latex?\nabla_\theta&space;J(\theta)&space;=&space;\mathbb{E}_{\pi_\theta}&space;[\nabla_\theta&space;log&space;\pi_\theta(s,a)\&space;G_t]\&space;\&space;\&space;\text{REINFORCE}" title="\nabla_\theta J(\theta) = \mathbb{E}{\pi\theta} [\nabla_\theta log \pi_\theta(s,a)\ G_t]\ \ \ \text{REINFORCE}" />
 
-<img src="https://latex.codecogs.com/svg.latex?\nabla_\theta&space;J(\theta)&space;=&space;\mathbb{E}{\pi\theta}&space;[\nabla_\theta&space;log&space;\pi_\theta(s,a)\&space;Q^w(s,a)]\&space;\&space;\&space;\text{Q&space;Actor-Critic}" title="\nabla_\theta J(\theta) = \mathbb{E}{\pi\theta} [\nabla_\theta log \pi_\theta(s,a)\ Q^w(s,a)]\ \ \ \text{Q Actor-Critic}" />
+<img src="https://latex.codecogs.com/svg.latex?\nabla_\theta&space;J(\theta)&space;=&space;\mathbb{E}_{\pi_\theta}&space;[\nabla_\theta&space;log&space;\pi_\theta(s,a)\&space;Q^w(s,a)]\&space;\&space;\&space;\text{Q&space;Actor-Critic}" title="\nabla_\theta J(\theta) = \mathbb{E}{\pi\theta} [\nabla_\theta log \pi_\theta(s,a)\ Q^w(s,a)]\ \ \ \text{Q Actor-Critic}" />
 
-<img src="https://latex.codecogs.com/svg.latex?\nabla_\theta&space;J(\theta)&space;=&space;\mathbb{E}{\pi\theta}&space;[\nabla_\theta&space;log&space;\pi_\theta(s,a)\&space;A^w(s,a)]\&space;\&space;\&space;\text{Advantage&space;Actor-Critic}" title="\nabla_\theta J(\theta) = \mathbb{E}{\pi\theta} [\nabla_\theta log \pi_\theta(s,a)\ A^w(s,a)]\ \ \ \text{Advantage Actor-Critic}" />
+<img src="https://latex.codecogs.com/svg.latex?\nabla_\theta&space;J(\theta)&space;=&space;\mathbb{E}_{\pi_\theta}&space;[\nabla_\theta&space;log&space;\pi_\theta(s,a)\&space;A^w(s,a)]\&space;\&space;\&space;\text{Advantage&space;Actor-Critic}" title="\nabla_\theta J(\theta) = \mathbb{E}{\pi\theta} [\nabla_\theta log \pi_\theta(s,a)\ A^w(s,a)]\ \ \ \text{Advantage Actor-Critic}" />
 
 <img src="https://latex.codecogs.com/svg.latex?\nabla_\theta&space;J(\theta)&space;=&space;\mathbb{E}_{\pi_\theta}&space;[\nabla_\theta&space;log&space;\pi_\theta(s,a)\&space;\delta]\&space;\&space;\&space;\text{TD&space;Actor-Critic}" title="\nabla_\theta J(\theta) = \mathbb{E}_{\pi_\theta} [\nabla_\theta log \pi_\theta(s,a)\ \delta]\ \ \ \text{TD Actor-Critic}" />
 
@@ -61,24 +61,7 @@ O pseudocódigo do A2C pode ser visto na imagem a seguir:
 
 ![pseudocode](imgs/A2C.svg)
 
-É importante ressaltar que essa versão utiliza duas redes neurais, uma para o crítico e outra para o ator, mas implementações com uma só rede são possíveis e serão mostradas abaixo.
-
-## On Policy x Off Policy
-
-Agora que já vimos diversos algoritmos, desde o Q learning tabular até métodos Actor-Critic, é legal dar um passo atrás para avaliar a diferença entre os dois diferentes tipos de algoritmo em respeito à política:
-
-On Policy:
-  - Mais simples
-  - Mais rápido
-
-Off Policy:
-  - Sample Efficient 
-    - Eficiente com poucas experiências
-    - Reaproveita experiências passadas
-  - Pode ser utilizado de maneira offline
-  - Maior variância
-    - Ruído decorrente de aprender uma política com dados de outra
-  - Mais lento
+É importante ressaltar que essa versão utiliza duas redes neurais, uma para o crítico e outra para o ator, mas implementações com uma só rede são possíveis e serão mostradas no notebook.
 
 ## Referências
 https://towardsdatascience.com/understanding-actor-critic-methods-931b97b6df3f
