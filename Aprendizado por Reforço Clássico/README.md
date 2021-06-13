@@ -10,6 +10,6 @@ Um dos problemas mais clássicos e simples em aprendizado por reforço é o prob
 
 Os métodos de **Monte Carlo** são algoritmos de Aprendizado por Reforço que estimam as funções de valor com base em suas *experiências*, obtidas através da interação com o ambiente. Nesses métodos, os valores são obtidos a partir do cálculo da média dos retornos de cada episódio.
 
-## Temporal-Difference Learning
+## [📅 Temporal-Difference Learning](Temporal-Difference)
 
 ## Dyna
