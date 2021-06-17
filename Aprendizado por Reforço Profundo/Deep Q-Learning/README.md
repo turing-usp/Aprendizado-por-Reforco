@@ -8,9 +8,17 @@ DQNs são alternativas muito boas ao Q-Learning quando precisamos lidar com prob
 
 Buffer que guarda as experiências amostradas em um ambiente para serem utilizadas no treinamento de algoritmos off-policy, de modo a aumentar sua eficiência.
 
+## [Prioritized Experience Replay](Prioritized%20Experience%20Replay)
+
+Versão alternativa do Replay Buffer. Ao invés de amostrar experiências aleatoriamente, o buffer de PER dá peso maior às experiências que são mais importantes para o agente.
+
 ## [Deep Q-Network (DQN)](Deep%20Q-Network)
 
 A versão profunda do Q-Learning, utilizando uma rede neural para aproximar a função de valor Q.
+
+## [Double DQN](Double%20DQN)
+
+Uma extensão do algoritmo de DQN com correção de viés que estabiliza a performance do treinamento do agente
 
 ## [N-step DQN](N-step%20DQN)
 
