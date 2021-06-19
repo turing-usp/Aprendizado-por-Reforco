@@ -31,6 +31,9 @@ Agradecimentos a todos esses contribuidores ([emoji key](https://allcontributors
     <td align="center"><a href="https://github.com/nelsonayamashita"><img src="https://avatars3.githubusercontent.com/u/46365985?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nelson Alves Yamashita</b></sub></a><br /><a href="https://github.com/turing-usp/Aprendizado-por-Reforco/commits?author=nelsonayamashita" title="Code">💻</a> <a href="https://github.com/turing-usp/Aprendizado-por-Reforco/commits?author=nelsonayamashita" title="Documentation">📖</a> <a href="https://github.com/turing-usp/Aprendizado-por-Reforco/pulls?q=is%3Apr+reviewed-by%3Anelsonayamashita" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/FelipeAugustoMachado"><img src="https://avatars.githubusercontent.com/u/17839011?v=4?s=100" width="100px;" alt=""/><br /><sub><b>FelipeAugustoMachado</b></sub></a><br /><a href="https://github.com/turing-usp/Aprendizado-por-Reforco/pulls?q=is%3Apr+reviewed-by%3AFelipeAugustoMachado" title="Reviewed Pull Requests">👀</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/rafael-acoelho"><img src="https://avatars.githubusercontent.com/u/64666949?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rafael Araujo Coelho</b></sub></a><br /><a href="https://github.com/turing-usp/Aprendizado-por-Reforco/pulls?q=is%3Apr+reviewed-by%3Arafael-acoelho" title="Reviewed Pull Requests">👀</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
