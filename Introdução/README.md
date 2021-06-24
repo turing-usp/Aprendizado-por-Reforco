@@ -94,6 +94,8 @@ Vamos pensar no caso do **Pedra, Papel ou Tesoura**: escolher qualquer uma das t
 
 Nosso objetivo no Aprendizado por Reforço é descobrir a **Política Ótima** para o nosso agente, que consiste na política que escolhe sempre a melhor ação para cada estado. Essa melhor ação é definida como a ação que vai garantir o maior retorno até o final do jogo.
 
+Em RL é comum dividirmos os modelos de treinamento em dois, os algoritmos **On-policy** e **Off-policy**. Essa divisão ocorre em relação a como as experiências adquiridas pelo modelo se relacinam com a **política**. Você pode aprender mais sobre eles [aqui](On-Policy%20x%20Off-Policy) .
+
 <p align="center">
   <img src="https://miro.medium.com/max/875/0*L9R23HBRbrbLgrFk.gif" title="Política 2" width=450 />
 
