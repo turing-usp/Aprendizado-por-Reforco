@@ -1,7 +1,7 @@
 # A2C - Advantage Actor Critic
 ###### Veja a implementação do algoritmo no [notebook](A2C.ipynb)!
 
-Como vimos na aula de Policy Gradients, existem algoritmos capazes de aprender a política diretamente, utilizando gradiente ascendente neste processo. Porém, modelos como REINFORCE sofrem com grande variância. Para tentar solucionar este problema, surge a ideia de utilizar uma estimativa do retorno. Cada uma dessas estimativas leva a diferentes algoritmos Actor-Critic. Hoje, vamos abordar uma delas, a Advantage (vantagem):
+Como vimos na aula de [Policy Gradients](https://github.com/turing-usp/Aprendizado-por-Reforco/tree/master/Aprendizado%20por%20Refor%C3%A7o%20Profundo/Policy%20Gradient), existem algoritmos capazes de aprender a política diretamente, utilizando gradiente ascendente neste processo. Porém, modelos como REINFORCE sofrem com grande variância. Para tentar solucionar este problema, surge a ideia de utilizar uma estimativa do retorno. Cada uma dessas estimativas leva a diferentes algoritmos Actor-Critic. Hoje, vamos abordar uma delas, a Advantage (vantagem):
 
 <img src="https://latex.codecogs.com/svg.latex?\nabla_\theta&space;J(\theta)&space;=&space;\mathbb{E}_{\pi_\theta}&space;[\nabla_\theta&space;log&space;\pi_\theta(s,a)\&space;G_t]\&space;\&space;\&space;\text{REINFORCE}" title="\nabla_\theta J(\theta) = \mathbb{E}{\pi\theta} [\nabla_\theta log \pi_\theta(s,a)\ G_t]\ \ \ \text{REINFORCE}" />
 
@@ -10,6 +10,8 @@ Como vimos na aula de Policy Gradients, existem algoritmos capazes de aprender a
 <img src="https://latex.codecogs.com/svg.latex?\nabla_\theta&space;J(\theta)&space;=&space;\mathbb{E}_{\pi_\theta}&space;[\nabla_\theta&space;log&space;\pi_\theta(s,a)\&space;A^w(s,a)]\&space;\&space;\&space;\text{Advantage&space;Actor-Critic}" title="\nabla_\theta J(\theta) = \mathbb{E}{\pi\theta} [\nabla_\theta log \pi_\theta(s,a)\ A^w(s,a)]\ \ \ \text{Advantage Actor-Critic}" />
 
 <img src="https://latex.codecogs.com/svg.latex?\nabla_\theta&space;J(\theta)&space;=&space;\mathbb{E}_{\pi_\theta}&space;[\nabla_\theta&space;log&space;\pi_\theta(s,a)\&space;\delta]\&space;\&space;\&space;\text{TD&space;Actor-Critic}" title="\nabla_\theta J(\theta) = \mathbb{E}_{\pi_\theta} [\nabla_\theta log \pi_\theta(s,a)\ \delta]\ \ \ \text{TD Actor-Critic}" />
+
+Importante notar que A2C, assim como Policy Gradient, é um algoritmo **On-Policy**. Você pode ler mais sobre a diferença entre algoritmos **On-Policy vs. Off-Policy** [aqui](https://github.com/turing-usp/Aprendizado-por-Reforco/tree/master/Introdu%C3%A7%C3%A3o/On-Policy%20x%20Off-Policy)
 
 ## O Ator e o Crítico
 
