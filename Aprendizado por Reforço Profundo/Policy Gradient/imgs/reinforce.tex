@@ -1,0 +1,43 @@
+\documentclass[brazilian,preview]{standalone}
+\usepackage[paperwidth=17cm,margin=0cm]{geometry}
+\usepackage{babel}
+\usepackage[babel, final]{microtype}
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage[math-style=ISO]{unicode-math}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{listings}
+
+\makeatletter
+\lstnewenvironment{algorithm}{
+    \lstset{
+        columns=fullflexible,
+        mathescape,escapechar=@,
+        literate={-}{-}1,
+        morekeywords={Parâmetro,Parâmetros,Inicializar,Loop},
+    }}{}
+\surroundwithmdframed[
+    roundcorner=5pt,
+    linewidth=2pt,
+    linecolor=black!70,
+    backgroundcolor=black!5,
+    frametitlebackgroundcolor=black!70,
+    frametitlefont={\normalfont\bfseries\color{white}},
+    frametitle={Algoritmo.\hspace*{.5em}\@title},
+]{algorithm}
+\makeatother
+
+
+\title{REINFORCE}
+\geometry{paperwidth=17cm}
+
+\begin{document}
+\begin{algorithm}
+Inicializar política $\pi$ com parâmetros $\theta$
+Loop para cada episódio $\left\{s_0, a_0, r_1, ..., s_{T-1}, a_{T-1}, r_T \right\}$:
+    Inicializar $G_t$ = 0
+    Loop de $t = T-1$ até $0$
+        $G_t \leftarrow \gamma G_{t+1} + r_{t+1}$
+    Calcular $\nabla_\theta J\left(\theta\right) \leftarrow \sum\limits_{t=0}^{T-1} G_t \nabla_{\theta}\log \pi\left(a_t| s_t, \theta\right)$
+    Atualizar parâmetros $\theta \leftarrow \theta + \alpha \nabla_\theta J\left(\theta\right)$
+\end{algorithm}
+\end{document}

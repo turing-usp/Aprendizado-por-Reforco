@@ -1,0 +1,99 @@
+{
+  "projectName": "Aprendizado-por-Reforco",
+  "projectOwner": "turing-usp",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "gitmoji",
+  "contributors": [
+    {
+      "login": "arielguerreiro",
+      "name": "arielguerreiro",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32415652?v=4",
+      "profile": "https://github.com/arielguerreiro",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "Berbardo",
+      "name": "Bernardo Coutinho",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/48636340?v=4",
+      "profile": "https://github.com/Berbardo",
+      "contributions": [
+        "code",
+        "doc",
+        "review"
+      ]
+    },
+    {
+      "login": "dueiras",
+      "name": "Eduardo Eiras",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/55857466?v=4",
+      "profile": "https://github.com/dueiras",
+      "contributions": [
+        "code",
+        "doc",
+        "review"
+      ]
+    },
+    {
+      "login": "fernandokm",
+      "name": "Fernando Matsumoto",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/12588556?v=4",
+      "profile": "https://github.com/fernandokm",
+      "contributions": [
+        "code",
+        "doc",
+        "review",
+        "tool"
+      ]
+    },
+    {
+      "login": "luish18",
+      "name": "Luis Henrique de Almeida Fernandes",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/64617905?v=4",
+      "profile": "https://github.com/luish18",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "nelsonayamashita",
+      "name": "Nelson Alves Yamashita",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/46365985?v=4",
+      "profile": "https://github.com/nelsonayamashita",
+      "contributions": [
+        "code",
+        "doc",
+        "review"
+      ]
+    },
+    {
+      "login": "FelipeAugustoMachado",
+      "name": "FelipeAugustoMachado",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17839011?v=4",
+      "profile": "https://github.com/FelipeAugustoMachado",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "rafael-acoelho",
+      "name": "Rafael Araujo Coelho",
+      "avatar_url": "https://avatars.githubusercontent.com/u/64666949?v=4",
+      "profile": "https://github.com/rafael-acoelho",
+      "contributions": [
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
+}

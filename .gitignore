@@ -445,4 +445,4 @@ dmypy.json
 
 *.pickle
 **/imgs/*.pdf
-.vscode
+.vscode/
