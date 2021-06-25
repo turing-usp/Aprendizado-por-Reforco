@@ -14,7 +14,7 @@ O objetivo do algoritmo é encontrar a função de *Valor Estado-Ação* da pol�
 
 ![funcao q](https://camo.githubusercontent.com/003498f344a099b4d34d45aa2bc0841e562fa01e/68747470733a2f2f6c617465782e636f6465636f67732e636f6d2f6769662e6c617465783f715f5c706928732c61292673706163653b3d2673706163653b5c6d6174686f707b5c6d61746862627b457d5f5c70697d5b7b475f747d7c7b535f743d732c2673706163653b415f743d617d5d)
 
-O algoritmo de Q-Learning é extremamente versátil dentro dos métodos TD, por ser um algoritmo _off-policy_, ou seja, seu aprendizado não depende da política que está sendo seguida, diferente de outros métodos TD, como SARSA. Com isso, o treinamento é mais eficiente, pois pode usar experiências armazenadas em seu treinamento, não somente o que o agente está observando no episódio em si. Você pode ler mais sobre a diferença entre algoritmos *On-Policy vs. Off-Policy* [aqui](https://github.com/turing-usp/Aprendizado-por-Reforco/tree/master/Introdu%C3%A7%C3%A3o/On-Policy%20x%20Off-Policy)
+O algoritmo de Q-Learning é extremamente versátil dentro dos métodos TD, por ser um algoritmo _off-policy_, ou seja, seu aprendizado não depende da política que está sendo seguida, diferente de outros métodos TD, como SARSA. Com isso, o treinamento é mais eficiente, pois pode usar experiências armazenadas em seu treinamento, não somente o que o agente está observando no episódio em si. Você pode ler mais sobre a diferença entre algoritmos *On-Policy* e *Off-Policy* [aqui](Introdu%C3%A7%C3%A3o/On-Policy%20x%20Off-Policy)
 
 ## Política
 
