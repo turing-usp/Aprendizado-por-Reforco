@@ -11,7 +11,7 @@ Como vimos na aula de [Policy Gradients](Aprendizado%20por%20Refor%C3%A7o%20Prof
 
 <img src="https://latex.codecogs.com/svg.latex?\nabla_\theta&space;J(\theta)&space;=&space;\mathbb{E}_{\pi_\theta}&space;[\nabla_\theta&space;log&space;\pi_\theta(s,a)\&space;\delta]\&space;\&space;\&space;\text{TD&space;Actor-Critic}" title="\nabla_\theta J(\theta) = \mathbb{E}_{\pi_\theta} [\nabla_\theta log \pi_\theta(s,a)\ \delta]\ \ \ \text{TD Actor-Critic}" />
 
-Importante notar que A2C, assim como Policy Gradient, é um algoritmo **On-Policy**. Você pode ler mais sobre a diferença entre algoritmos **On-Policy vs. Off-Policy** [aqui](Introdu%C3%A7%C3%A3o/On-Policy%20x%20Off-Policy)
+Importante notar que A2C, assim como Policy Gradient, é um algoritmo **On-Policy**. Você pode ler mais sobre a diferença entre algoritmos **On-Policy e Off-Policy** [aqui](Introdu%C3%A7%C3%A3o/On-Policy%20x%20Off-Policy)
 
 ## O Ator e o Crítico
 
