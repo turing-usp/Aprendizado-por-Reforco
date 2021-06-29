@@ -23,6 +23,8 @@ onde 𝛼 é a taxa de aprendizado. Só falta um detalhe bem importante nessa eq
 
 Obs: O resto dessa explicação, assim como a tese de referência, assume que a função objetivo é <img src="https://latex.codecogs.com/svg.latex?J(\theta)&space;=&space;J_{\mathrm{mean}G}(\theta)" title="J(\theta) = J_{\mathrm{mean}G}(\theta)" />, ou seja, queremos maximizar o retorno médio por episódio.
 
+É importante notar que **Policy Gradient** é um algoritmo **On-Policy**. Você pode ler mais sobre a diferença entre algoritmos **On-Policy e Off-Policy** [aqui](Introdu%C3%A7%C3%A3o/On-Policy%20x%20Off-Policy) 
+
 ## Teorema de Policy Gradient
 
 Definida a nossa função objetivo J, precisamos encontrar seu gradiente para então aplicar o gradiente ascendente. Para qualquer uma das funções objetivo especificadas acima, o gradiente de J é dado por:
