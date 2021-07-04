@@ -1,6 +1,6 @@
-# Aprendizado por Reforço
+<img src="img/title.gif" width="100%" />
 
-Repositório de Aprendizado por Reforço desenvolvido pelo Grupo Turing.
+> Repositório de Aprendizado por Reforço desenvolvido pelo Turing USP.
 
 ## - [👩‍🏫 Introdução](Introdução)
 
