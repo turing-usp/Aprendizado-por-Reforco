@@ -8,7 +8,7 @@ A ideia de um algoritmo com gradiente da política surgiu primeiro com [Silver (
 
 Este algoritmo é um Actor-Critic, mas, diferentemente dos que vimos antes, é off policy. Diferente do que estamos acostumados, este algoritmo só pode ser usado em espaços de ação contínuos. Podemos pensar então no DDPG como uma "DQN para espaço de ação contínuo".
 
-$$a^*(s) = arg max_a Q^*(s,a)$$
+<img src="https://latex.codecogs.com/svg.latex?a^*(s)&space;=&space;arg&space;max_a&space;Q^*(s,a)" title="a^*(s) = arg max_a Q^*(s,a)" />
 
 A equação acima, da ação ótima para um dado estado, é familiar, mas se torna problemática para ações não discretas. É fácil contabilizar o máximo de uma série finita de ações, mas ações contínuas tornam essa operação problemática.
 
@@ -18,7 +18,7 @@ Dessa forma, temos então $max_a Q(s,a) \approx Q(s, \mu(s))$, facilitando a com
 
 ### Q-Learning
 
-$$Q^*(s,a) = E_{s \sim P} \bigg[r(s,a) + \gamma max_{a'} Q^*(s',a') \bigg] $$
+<img src="https://latex.codecogs.com/svg.latex?Q^*(s,a)&space;=&space;E_{s&space;\sim&space;P}&space;\bigg[r(s,a)&space;&plus;&space;\gamma&space;max_{a'}&space;Q^*(s',a')&space;\bigg]" title="Q^*(s,a) = E_{s \sim P} \bigg[r(s,a) + \gamma max_{a'} Q^*(s',a') \bigg]" />
 
 A parte de Q learning, cuja equação para encontrar o valor ótimo de Q está acima, consiste em minimizar o erro quadrático médio de Bellman (MSBE), próximo do que já se era feito com a DQN.
 
@@ -29,14 +29,14 @@ O [post da OpenAI](https://spinningup.openai.com/en/latest/algorithms/ddpg.html)
 
 O objetivo é achar a política determinística $\mu_{\theta}(s) $ que fornece a ação que maximiza $Q(s,a)$. Diferenciando a função Q em a, é possível então realizar gradiente ascendente para maximizar a política:
 
-$$\nabla_\theta J = \mathbb{E}_{s_t} \bigg[ \nabla_a Q(s,a|\theta^Q) |_{s = s_t, a = \mu(s_t)} \nabla_\theta \mu_\theta(s|\theta^\mu)|_{s = s_t} \bigg] $$
+<img src="https://latex.codecogs.com/svg.latex?\nabla_\theta&space;J&space;=&space;\mathbb{E}_{s_t}&space;\bigg[&space;\nabla_a&space;Q(s,a|\theta^Q)&space;|_{s&space;=&space;s_t,&space;a&space;=&space;\mu(s_t)}&space;\nabla_\theta&space;\mu_\theta(s|\theta^\mu)|_{s&space;=&space;s_t}&space;\bigg]" title="\nabla_\theta J = \mathbb{E}_{s_t} \bigg[ \nabla_a Q(s,a|\theta^Q) |_{s = s_t, a = \mu(s_t)} \nabla_\theta \mu_\theta(s|\theta^\mu)|_{s = s_t} \bigg]" />
 
 
 ## Exploração
 
 Um problema para casos de ação contínua é a exploração. Por outro lado, por se tratar de um algoritmo off-policy, podemos tratar o problema da exploração independente do algoritmo de aprendizado. Dessa forma, podemos criar uma política de exploração $\mu'$ adicionando ruído na nossa política/função ator:
 
-$$\mu'(s) = \mu_\theta(s) + \mathcal{N} $$
+<img src="https://latex.codecogs.com/svg.latex?\mu'(s)&space;=&space;\mu_\theta(s)&space;&plus;&space;\mathcal{N}" title="\mu'(s) = \mu_\theta(s) + \mathcal{N}" />
 
 No paper original, o ruído foi gerado por um processo [Ornstein-Uhlenbeck](https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process). Porém, a openAI recomenda o uso de um ruído gaussiano não correlacionado e de média zero, por ser mais simples e funcionar tão bem quanto.
 
