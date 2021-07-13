@@ -14,6 +14,10 @@ Conceitos importantes de Aprendizado por Reforço como Temporal Difference Learn
 
 Descrição e implementação de algoritmos modernos de Aprendizado por Reforço com redes neurais.
 
+## - [📚 Bibliotecas](Bibliotecas)
+
+Guias e tutoriais de diferentes bibliotecas de Aprendizado por Reforço. Uma boa introdução prática à área.
+
 ## ✨ Contribuidores
 
 Agradecimentos a todos esses contribuidores ([emoji key](https://allcontributors.org/docs/en/emoji-key)):

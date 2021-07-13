@@ -1,6 +1,6 @@
 # 👾 Stable Baselines
 
- Guia de como utilizar a biblioteca [Stable Baselines](https://github.com/DLR-RM/stable-baselines3) para projetos de Aprendizagem por reforço.
+ Guia de como utilizar a biblioteca [Stable Baselines](https://github.com/DLR-RM/stable-baselines3) para projetos de Aprendizado por Reforço.
 
 O guia completo encontra-se neste notebook:
 
@@ -27,7 +27,7 @@ Entretanto, caso você não queira ver os exemplos em código, o texto do guia e
 
 ## O que é Stable Baselines?
 
-A **Stable Baselines** é uma biblioteca de Aprendizagem por Reforço que implementa diversos algoritmos de agentes de RL, além de várias funcionalidades úteis para o treinamento de um agente. Suas implementações são bem simples e intuitivas, mas sem deixarem de ser otimizadas e poderosas, buscando facilitar o desenvolvimento de projetos de reforço de alta qualidade.
+A **Stable Baselines** é uma biblioteca de Aprendizado por Reforço que implementa diversos algoritmos de agentes de RL, além de várias funcionalidades úteis para o treinamento de um agente. Suas implementações são bem simples e intuitivas, mas sem deixarem de ser otimizadas e poderosas, buscando facilitar o desenvolvimento de projetos de Aprendizado por Reforço de alta qualidade.
 
 ![Logo](https://github.com/hill-a/stable-baselines/raw/master/docs//_static/img/logo.png "Logo da Stable Baselines")
 
@@ -43,17 +43,17 @@ OBS: É necessário instalar antes o PyTorch.
 
 ## Como usar Stable Baselines?
 
-Com Stable Baselines, o processo de criar e treinar um agente é bem simples. Entretanto, caso você não saiba muito de Aprendizagem por Reforço, é primeiro preciso passar por alguns conhecimentos básicos.
+Com Stable Baselines, o processo de criar e treinar um agente é bem simples. Entretanto, caso você não saiba muito de Aprendizado por Reforço, é primeiro preciso passar por alguns conhecimentos básicos.
 
 ### Gym
 
-O **[Gym](https://gym.openai.com/)** é uma biblioteca desenvolvida pela OpenAI que contém várias implementações prontas de ambientes de Aprendizagem por Reforço. Ela é muito utilizada quando se quer testar um algoritmo de agente sem ter o trabalho de programar seu próprio ambiente.
+O **[Gym](https://gym.openai.com/)** é uma biblioteca desenvolvida pela OpenAI que contém várias implementações prontas de ambientes de Aprendizado por Reforço. Ela é muito utilizada quando se quer testar um algoritmo de agente sem ter o trabalho de programar seu próprio ambiente.
 
 <img src="https://camo.githubusercontent.com/25043fb622d3f9115a263fb71c61adb08c1d7790/68747470733a2f2f7072617665656e702e636f6d2f70726f6a656374732f484f4941574f472f6f75747075742e676966" alt="Exemplos de Ambientes do Gym" class="inline"/>
 
 ### O que é um Ambiente?
 
-Um **Ambiente** de Aprendizagem por Reforço é um espaço que representa o nosso problema, é o objeto com o qual o nosso agente deve interagir para cumprir sua função. Isso significa que o agente toma **ações** nesse ambiente, e recebe **recompensas** dele com base na qualidade de sua tomada de decisões.
+Um **Ambiente** de Aprendizado por Reforço é um espaço que representa o nosso problema, é o objeto com o qual o nosso agente deve interagir para cumprir sua função. Isso significa que o agente toma **ações** nesse ambiente, e recebe **recompensas** dele com base na qualidade de sua tomada de decisões.
 
 Todos os ambientes são dotados de um **espaço de observações**, que é a forma pela qual o agente recebe informações e deve se basear para a tomada de decisões, e um **espaço de ações**, que especifica as ações possíveis do agente. No xadrez, por exemplo, o espaço de observações seria o conjunto de todas as configurações diferentes do tabuleiro, e o espaço de ações seria o conjunto de todos os movimentos permitidos.
 
