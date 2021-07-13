@@ -1,4 +1,4 @@
-# 👾 Stable Baselines 
+# 👾 Stable Baselines
 
  Guia de como utilizar a biblioteca [Stable Baselines](https://github.com/DLR-RM/stable-baselines3) para projetos de Aprendizagem por reforço.
 
@@ -12,7 +12,7 @@ Entretanto, caso você não queira ver os exemplos em código, o texto do guia e
 
 ## Índice
 
-- [👾 Guia da Stable Baselines](#-guia-da-stable-baselines)
+- [👾 Stable Baselines](#-stable-baselines)
   - [O que é Stable Baselines?](#o-que-é-stable-baselines)
   - [Instalação](#instalação)
   - [Como usar Stable Baselines?](#Como-usar-Stable-Baselines)
@@ -23,6 +23,7 @@ Entretanto, caso você não queira ver os exemplos em código, o texto do guia e
     - [Criando um Agente](#Criando-um-Agente)
     - [Rodando um Episódio](#Rodando-um-Episódio)
     - [Treinamento](#Treinamento)
+    - [Monitorando o Treinamento](#Monitorando-o-Treinamento)
 
 ## O que é Stable Baselines?
 
@@ -35,10 +36,10 @@ A **Stable Baselines** é uma biblioteca de Aprendizagem por Reforço que implem
 Para instalar a biblioteca com o `pip`, basta rodar:
 
 ```
-pip install stable-baselines
+pip install stable-baselines3
 ```
 
-OBS: A biblioteca não suporta Tensorflow 2 ainda, e nem roda em Python 2.
+OBS: É necessário instalar antes o PyTorch.
 
 ## Como usar Stable Baselines?
 
@@ -132,7 +133,7 @@ Quando queremos mover o carrinho para a esquerda, fazemos um `env.step(0)`; quan
 
 Depois de escolhermos nosso ambiente, já podemos pensar em qual algoritmo de agente queremos usar.
 
-A biblioteca disponibiliza algoritmos de diversos tipos, como *Policy Gradients*, *Actor Critics*, *DQN*, etc. Nem todos eles suportam todos os tipos de ambientes, então é recomendável dar uma olhada na [página oficial dos algoritmos](https://stable-baselines.readthedocs.io/en/master/guide/algos.html).
+A biblioteca disponibiliza algoritmos de diversos tipos, como *Policy Gradients*, *Actor Critics*, *DQN*, etc. Nem todos eles suportam todos os tipos de ambientes, então é recomendável dar uma olhada na [página oficial dos algoritmos](https://stable-baselines3.readthedocs.io/en/master/guide/algos.html).
 
 #### Inicialização
 
@@ -142,12 +143,12 @@ Todos os algoritmos são inicializados de uma forma parecida, nós instanciamos 
 agente = ALGORITMO(policy, env)
 ```
 
-Como exemplo, vamos criar um **ACER**, um tipo de Actor-Critic:
+Como exemplo, vamos criar um **PPO**, um tipo de Actor-Critic
 
 ```python
-from stable_baselines import ACER
+from stable_baselines import PPO
 
-model = ACER('MlpPolicy', env, seed=1, verbose=1)
+model = PPO('MlpPolicy', env, seed=1, verbose=1)
 ```
 
 Todos os agentes também possuem alguns métodos em comuns bem importantes de se conhecer:
@@ -213,6 +214,18 @@ run_episode(env, model, render=True)
 
 Se você tentou rodar um episódio, provavelmente o resultado não foi tão bom assim. Isso é porque precisamos treinar nosso agente para que ele saiba as melhores ações a se tomar.
 
+### Avaliando o Agente
+
+Para melhor avaliar o desempenho do nosso agente, podemos utilizar a função `evaluate_policy` da biblioteca, que roda uma quantidade determinável de episódios e retorna a recompensa média obtida.
+
+```python
+# Ambiente separado para avaliação
+eval_env = gym.make('CartPole-v1')
+
+# Avaliando o agente
+mean_reward, std_reward = evaluate_policy(model, eval_env, n_eval_episodes=25, deterministic=True)
+```
+
 ### Treinamento
 
 O treinamento do agente acontece de maneira bem simples, basta rodar o método `.learn()` com a quantidade de instantes de tempo `total_timesteps` que desejamos treinar.
@@ -230,3 +243,85 @@ run_episode(env, model, render=True)
 ```
 
 Esse é todo o conhecimento necessário para resolver mais ambientes simples. Entretanto, ainda existem várias outras funcionalidades muito interessantes da biblioteca que valem a pena aprender.
+
+### Monitorando o Treinamento
+
+Para obter mais informações do treinamento, podemos utilizar o *wrapper* `Monitor` da biblioteca para monitorar o desempenho do nosso agente mesmo durante o treino.
+
+Para isto, primeiro devemos criar uma pasta de logs:
+
+```python
+import os
+
+# Cria um diretório de logs
+log_dir = "./logs/"
+os.makedirs(log_dir, exist_ok=True)
+```
+
+Em seguida, criamos o nosso ambiente e passamos ele para o nosso *wrapper*:
+
+```python
+from stable_baselines3.common.monitor import Monitor
+
+# Cria o ambiente
+env = gym.make('CartPole-v1')
+
+# Encapsula ele no wrapper Monitor
+env = Monitor(env, log_dir)
+```
+
+A partir daí, basta treinar o nosso agente como normal, utilizando o nosso novo ambiente encapsulado pelo *wrapper*:
+
+```python
+model = PPO('MlpPolicy', env, seed=1, verbose=1).learn(total_timesteps=40000)
+```
+
+Terminado o treinamento, podemos plotar os resultados utilizando o `result_plotter`:
+
+```python
+from stable_baselines3.common import results_plotter
+
+# Plota os resultados
+results_plotter.plot_results([log_dir], 1e5, results_plotter.X_TIMESTEPS, "PPO CartPole")
+```
+
+![](img/grafico.png)
+
+Pronto! Agora temos uma visualização da performance do nosso agente durante o seu treinamento. Entretanto, podemos criar a nossa própria função de visualização para melhor analisar o modelo:
+
+```python
+import matplotlib.pyplot as plt
+
+def plot_results(log_folder, window=10, title='Curva de Aprendizado'):
+    """
+    Plota os resultados.
+
+    :param log_folder: (str) diretório dos resultados a serem plotados
+    :param window: (int) tamanho da janela da média móvel
+    :param title: (str) título do plot
+    """
+    # Obtém os resultados
+    results = results_plotter.load_results(log_folder)
+    x, y = results_plotter.ts2xy(results, 'timesteps')
+    
+    # Calcula a média móvel do retorno
+    y_smoothed = results_plotter.rolling_window(y, window=window).mean(axis=1)
+    
+    # Plota os resultados
+    fig = plt.figure(title, figsize=(10, 5))
+    plt.scatter(x, y, s=2)
+    plt.plot(x[window-1:], y_smoothed, color='darkblue', label="Média Móvel")
+    plt.xlabel('Timesteps')
+    plt.ylabel('Retorno Médio')
+    plt.title(title)
+    plt.legend()
+    plt.show()
+```
+
+Agora conseguimos visualizar melhor o treinamento:
+
+```python
+plot_results(log_dir)
+```
+
+![](img/rolling.png)
