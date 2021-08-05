@@ -67,10 +67,10 @@ Agora que você já sabe o que é um ambiente, é preciso entender como nosso ag
 
 | Método               | Funcionalidade                                          |
 | :------------------- |:------------------------------------------------------- |
-| reset()              | Inicializa o ambiente e recebe a observação inicial     |
-| step(action)         | Executa uma ação e recebe a observação e a recompensa   |
-| render()             | Renderiza o ambiente                                    |
-| close()              | Fecha o ambiente                                        |
+| `reset()`              | Inicializa o ambiente e recebe a observação inicial     |
+| `step(action)`         | Executa uma ação e recebe a observação e a recompensa   |
+| `render()`             | Renderiza o ambiente                                    |
+| `close()`              | Fecha o ambiente                                        |
 
 <br>
 
@@ -123,7 +123,9 @@ O **Espaço de Observação** do CartPole é definido por 4 informações:
 
 Dessa forma, a cada instante recebemos uma lista da observação com o seguinte formato:
 
-```[-3.3715708e+00 -2.6997593e+38  2.7833584e-01  2.0276438e+38]```
+```python
+[-3.3715708e+00 -2.6997593e+38  2.7833584e-01  2.0276438e+38]
+```
 
 Já o **Espaço de Ação** é composto por duas ações únicas: mover o carrinho para a **esquerda** ou para a **direita**.
 
@@ -143,7 +145,7 @@ Todos os algoritmos são inicializados de uma forma parecida, nós instanciamos 
 agente = ALGORITMO(policy, env)
 ```
 
-Como exemplo, vamos criar um **PPO**, um tipo de Actor-Critic
+Como exemplo, vamos criar um **PPO**, um tipo de Actor-Critic:
 
 ```python
 from stable_baselines import PPO
@@ -157,10 +159,10 @@ Todos os agentes também possuem alguns métodos em comuns bem importantes de se
 
 | Método        | Funcionalidade                          |
 | :------------ |:--------------------------------------- |
-| learn()       | Treina o agente                         |
-| predict(obs)  | Escolhe uma ação com base na observação |
-| save(caminho) | Salve o agente                          |
-| load(caminho) | Carrega o agente                        |
+| `learn()`       | Treina o agente                         |
+| `predict(obs)`  | Escolhe uma ação com base na observação |
+| `save(caminho)` | Salve o agente                          |
+| `load(caminho)` | Carrega o agente                        |
 
 <br>
 
