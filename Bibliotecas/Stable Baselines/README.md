@@ -6,7 +6,7 @@ O guia completo encontra-se neste notebook:
 
 ### [Guia Completo em Notebook](Stable%20Baselines.ipynb)
 
-### [Guia Completo no Google Colaboratory](https://colab.research.google.com/github/GrupoTuring/Aprendizado-por-Reforco/blob/colab/Bibliotecas/Stable%20Baselines/Stable%20Baselines.ipynb)
+### [Guia Completo no Google Colaboratory](https://colab.research.google.com/github/turing-usp/Aprendizado-por-Reforco/blob/main/Bibliotecas/Stable%20Baselines/Stable%20Baselines.ipynb)
 
 Entretanto, caso você não queira ver os exemplos em código, o texto do guia está presente a seguir.
 
