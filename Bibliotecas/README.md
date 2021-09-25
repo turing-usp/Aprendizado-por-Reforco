@@ -12,6 +12,6 @@ A **Stable Baselines** é uma biblioteca de Aprendizado por Reforço que impleme
 
 ## [💪 Gym](Gym)
 
-O **Gym** é um conjunto de ferramentas cujo objetivo é desenvolver e comparar algoritmos de aprendizado por reforço. A biblioteca trata-se basicamente de um conjunto de *environments*, ou ambientes de teste que o usuário pode utilizar pra testar seus algoritmos. Vale notar que esses ambientes tem uma interface compartilhada, desta forma torna-se possível escrever algoritmos gerais.
+O **Gym** é um conjunto de ferramentas que ajudam no desenvolvimento e na comparação de algoritmos de aprendizado por reforço. A biblioteca é basicamente um conjunto de *environments*, ou ambientes de teste que o usuário pode utilizar pra testar seus algoritmos. Vale notar que esses ambientes têm uma interface compartilhada, desta forma torna-se possível escrever algoritmos gerais.
 
 <center><img src="https://gym.openai.com/assets/dist/nav/nav-logo-dark-e5f2a4965e.svg" width="400"/></center>
