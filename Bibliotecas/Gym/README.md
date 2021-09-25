@@ -94,4 +94,4 @@ No gym, todo ambiente vem com um `action_space` e um `observation_space`. Esses 
 
 Essencialmente, este é o Gym e um de seus ambientes. Se além de aprender a utilizar a biblioteca e criar um ambiente, você também tem interesse em entender como utilizar um algoritmo de aprendizado por reforço, dê uma olhada no nosso tutorial de **[Stable Baselines]([https://github.com/DLR-RM/stable-baselines3](https://github.com/turing-usp/Aprendizado-por-Reforco/tree/main/Bibliotecas/Stable%20Baselines))**. 
 
-Aproveite e dê uma olhada nos [outros ambientes disponíveis na biblioteca]([https://gym.openai.com/envs/#classic_control]), eles não se limitam apenas nesses exemplos simples, a openAI disponibiliza desde portes de jogos de atari até modelos de ambientes tridimensionais.
+Aproveite e dê uma olhada nos [outros ambientes disponíveis na biblioteca]([https://gym.openai.com/envs/#classic_control]), eles não se limitam apenas nesses exemplos simples, a openAI disponibiliza desde emuladores de jogos de atari até modelos de ambientes tridimensionais.
