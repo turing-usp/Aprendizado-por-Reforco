@@ -30,15 +30,14 @@ Com o Gym, é possível testar e comparar algoritmos de aprendizado por reforço
 
 ## Instalação
 
-A instalação do Gym pode ser realizada de duas formas diferentes:
-
-### Pip (Para Python 3.5+)
-
+A instalação do Gym pode ser realizada tanto pelo notebook quanto por um terminal, através do pip (Python 3.5+).
 Caso não tenha o pip instalado, instruções para Linux, MacOS e Windows estão disponíveis neste [link](https://pip.pypa.io/en/stable/installation/).
 
-Para instalar o Gym, basta rodar o seguinte comando:
-
-     pip install gym
+Se estiver num notebook, rode a seguinte linha:
+```bash
+!pip install gym
+```
+Caso esteja acompanhando em um terminal, fora do notebook, retire o \"!\" no começo da linha.
 
 ## Ambientes
 
