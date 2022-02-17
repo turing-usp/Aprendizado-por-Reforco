@@ -2,6 +2,12 @@
 
 > Repositório de Aprendizado por Reforço desenvolvido pelo Turing USP.
 
+Boas vindas ao repositório de Aprendizado por Reforço, o hub de informações a respeito dessa área construído pelo Turing USP! Caso você seja iniciante na área, recomendamos seguir o nosso [🗺️ Guia de Aprendizado](Guia).
+
+## - [🗺️ Guia de Aprendizado](Guia)
+
+Aqui, você encontra sugestões de como seguir os tópicos do repositório de modo a organizar melhor seu aprendizado.
+
 ## - [👩‍🏫 Introdução](Introdução)
 
 Introdução ao Aprendizado por Reforço e apresentação de conceitos básicos da área.
