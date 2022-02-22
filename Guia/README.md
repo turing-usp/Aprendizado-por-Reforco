@@ -43,7 +43,7 @@ _adicionar taxonomia aqui_
   - Pré-requisitos: [Q-Learning](../Aprendizado%20por%20Reforço%20Clássico/Temporal-Difference/Q-Learning).
 
 - **[Policy Gradient](../Aprendizado%20por%20Reforço%20Profundo/Policy%20Gradient)**
-  - Um importante algoritmo de Aprendizado por Reforço profundo que aproxima diretamente a política ótima, sem estimar função de valor.
+  - Um importante algoritmo de Aprendizado por Reforço profundo que aproxima diretamente a política ótima, sem estimar a função de valor.
   - Pré-requisitos: [Monte Carlo](../Aprendizado%20por%20Reforço%20Clássico/Monte%20Carlo).
   
 - **[Actor-Critic](../Aprendizado%20por%20Reforço%20Profundo/Actor-Critic)**
