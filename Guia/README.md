@@ -1,6 +1,6 @@
 # 🗺️ Guia de Aprendizado
 
-Boas vindas ao **🗺️ Guia de Aprendizado** do Repositório de Aprendizado por Reforço! Aqui, você encontra sugestões de como seguir os tópicos do repositório de modo a organizar melhor seu aprendizado.
+Boas vindas ao **🗺️ Guia de Aprendizado** do Repositório de Aprendizado por Reforço! Aqui, você encontra sugestões de como seguir os tópicos do repositório de modo a organizar melhor seu aprendizado. Ao final do arquivo, também temos recomendações de materiais extra para aprofundar no assunto.
 
 ## 💯 Tópicos Introdutórios
 
@@ -61,3 +61,12 @@ Por fim, temos os algoritmos de Aprendizado por Reforço Profundo, que se baseia
 - **[Actor-Critic](../Aprendizado%20por%20Reforço%20Profundo/Actor-Critic)**
   - Algoritmo resultante da poderosa combinação entre Policy Gradient e uma rede neural para estimar a função de valor.
   - Pré-requisitos: [Deep Q-Learning](../Aprendizado%20por%20Reforço%20Clássico/Temporal-Difference/Q-Learning) e [Policy Gradient](../Aprendizado%20por%20Reforço%20Profundo/Policy%20Gradient).
+
+## 📚 Material Extra
+
+A seguir, disponibilizamos também alguns materiais extra para aprofundas em mais conteúdos de Aprendizado por Reforço!
+
+- **[Livro - Sutton & Barto](http://incompleteideas.net/book/RLbook2020.pdf)**: Livro fundamental de Aprendizado por Reforço. Detalha grande parte da teoria da área bem como seus principais algoritmos.
+- **[Spinning up - OpenAI](https://spinningup.openai.com/en/latest/)**: Blog da [OpenAI](https://openai.com) com explicação e implementação de vários algoritmos modernos de Aprendizado por Reforço Profundo.
+- **[Aprendizado por Reforço - Coursera](https://www.coursera.org/specializations/reinforcement-learning)**: Curso da Universidade de Alberta no Coursera sobre Aprendizado por Reforço. Explica muito dos mesmos conteúdos que o livro de maneira mais visual.
+- **[Vídeo Aulas - David Silver](https://www.youtube.com/watch?v=2pWv7GOvuf0&list=PLzuuYNsE1EZAXYR4FJ75jcJseBmo4KQ9-)**: Aulas de Aprendizado por Reforço do professor da University College London e pesquisador da [DeepMind](https://deepmind.com).
