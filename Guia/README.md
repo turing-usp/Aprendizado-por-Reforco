@@ -10,6 +10,8 @@ Boas vindas ao **🗺️ Guia de Aprendizado** do Repositório de Aprendizado po
   
 ## 👨‍🏭 Introduções Práticas
 
+Antes de estudar alguns algoritmos de Aprendizado por Reforço, pode ser interessante se familiarizar com algumas bibliotecas da área de maneira prática, de modo a motivar os estudos.
+
 - **[Gym](../Bibliotecas/Gym)**
   - Aprenda como funciona um ambiente na biblioteca do Gym.
   - Pré-requisitos: [Introdução ao Aprendizado por Reforço](../Introdução).
@@ -20,7 +22,12 @@ Boas vindas ao **🗺️ Guia de Aprendizado** do Repositório de Aprendizado po
 
 ## 🎰 Aprendizado por Reforço Clássico
 
-![Taxonomia dos Algoritmos de Aprendizado por Reforço Clássico](../img/taxonomia_classico.png)
+Os algoritmos fundamentais do Aprendizado por Reforço se encontram nesta categoria. É importante entender pelo menos alguns para adentrar assuntos mais modernos da área. A seguir, está apresentada uma taxonomia desses algoritmos clássicos:
+
+<p align="center">
+  <br/>
+  <img src="../img/taxonomia_classico.png" alt="Taxonomia dos Algoritmos de Aprendizado por Reforço Clássico"/>
+</p>
 
 - **[Bandits](../Aprendizado%20por%20Reforço%20Clássico/Bandits)**
   - O problema mais clássico da área! Aprender a escolher a melhor ação em uma situação simples.
@@ -36,7 +43,12 @@ Boas vindas ao **🗺️ Guia de Aprendizado** do Repositório de Aprendizado po
   
 ## 🧠 Aprendizado por Reforço Profundo
 
-![Taxonomia dos Algoritmos de Aprendizado por Reforço Profundo](../img/taxonomia_profundo.png)
+Por fim, temos os algoritmos de Aprendizado por Reforço Profundo, que se baseiam em redes neurais. Estes são alguns dos mais utilizados em aplicações modernas da área, já que podem representar problemas mais complexos. A seguir, está a apresentada uma taxonomia desses algoritmos:
+
+<p align="center">
+  <br/>
+  <img src="../img/taxonomia_profundo.png" alt="Taxonomia dos Algoritmos de Aprendizado por Reforço Profundo"/>
+</p>
 
 - **[Deep Q-Learning](../Aprendizado%20por%20Reforço%20Profundo/Deep%20Q-Learning)**
   - O algoritmo mais popular de Aprendizado por Reforço Profundo. Um aprimoramento de Q-Learning com redes neurais.
