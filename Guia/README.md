@@ -26,7 +26,7 @@ Os algoritmos fundamentais do Aprendizado por Reforço se encontram nesta catego
 
 <p align="center">
   <br/>
-  <img src="../img/taxonomia_classico.png" alt="Taxonomia dos Algoritmos de Aprendizado por Reforço Clássico"/>
+  <img src="../img/taxonomia_classico.png" alt="Taxonomia dos Algoritmos de Aprendizado por Reforço Clássico" width="600"/>
 </p>
 
 - **[Bandits](../Aprendizado%20por%20Reforço%20Clássico/Bandits)**
@@ -47,7 +47,7 @@ Por fim, temos os algoritmos de Aprendizado por Reforço Profundo, que se baseia
 
 <p align="center">
   <br/>
-  <img src="../img/taxonomia_profundo.png" alt="Taxonomia dos Algoritmos de Aprendizado por Reforço Profundo"/>
+  <img src="../img/taxonomia_profundo.png" alt="Taxonomia dos Algoritmos de Aprendizado por Reforço Profundo" width="650"/>
 </p>
 
 - **[Deep Q-Learning](../Aprendizado%20por%20Reforço%20Profundo/Deep%20Q-Learning)**
