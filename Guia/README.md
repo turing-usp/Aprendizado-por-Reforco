@@ -20,7 +20,7 @@ Boas vindas ao **🗺️ Guia de Aprendizado** do Repositório de Aprendizado po
 
 ## 🎰 Aprendizado por Reforço Clássico
 
-_adicionar taxonomia aqui_
+![Taxonomia dos Algoritmos de Aprendizado por Reforço Clássico](../img/taxonomia_classico.png)
 
 - **[Bandits](../Aprendizado%20por%20Reforço%20Clássico/Bandits)**
   - O problema mais clássico da área! Aprender a escolher a melhor ação em uma situação simples.
@@ -36,7 +36,7 @@ _adicionar taxonomia aqui_
   
 ## 🧠 Aprendizado por Reforço Profundo
 
-_adicionar taxonomia aqui_
+![Taxonomia dos Algoritmos de Aprendizado por Reforço Profundo](../img/taxonomia_profundo.png)
 
 - **[Deep Q-Learning](../Aprendizado%20por%20Reforço%20Profundo/Deep%20Q-Learning)**
   - O algoritmo mais popular de Aprendizado por Reforço Profundo. Um aprimoramento de Q-Learning com redes neurais.
