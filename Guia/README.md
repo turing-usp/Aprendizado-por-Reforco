@@ -64,7 +64,7 @@ Por fim, temos os algoritmos de Aprendizado por Reforço Profundo, que se baseia
 
 ## 📚 Material Extra
 
-A seguir, disponibilizamos também alguns materiais extra para aprofundas em mais conteúdos de Aprendizado por Reforço!
+A seguir, disponibilizamos também alguns materiais extras para se aprofundar em mais conteúdos de Aprendizado por Reforço!
 
 - **[Livro - Sutton & Barto](http://incompleteideas.net/book/RLbook2020.pdf)**: Livro fundamental de Aprendizado por Reforço. Detalha grande parte da teoria da área bem como seus principais algoritmos.
 - **[Spinning up - OpenAI](https://spinningup.openai.com/en/latest/)**: Blog da [OpenAI](https://openai.com) com explicação e implementação de vários algoritmos modernos de Aprendizado por Reforço Profundo.
